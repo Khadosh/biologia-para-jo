@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>01 · Diversidad de protozoos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<nav class="navbar">
+  <a class="inicio" href="index.html">← Carpeta</a>
+  <a class="actual" href="protozoos.html">Protozoos</a>
+  <a href="ciclo-mitosis.html">Ciclo · Mitosis</a>
+  <a href="meiosis.html">Meiosis</a>
+  <a href="ejercicios.html">Ejercicios</a>
+</nav>
+<div class="carpeta">
+
+  <header class="caratula">
+    <div class="materia">Cuaderno 01 · Diversidad</div>
+    <h1>Protozoos: los eucariotas que van solos</h1>
+    <p class="sub">Flagelados y amebas de tu cátedra. No los agrupamos por "cómo se mueven" a la vieja usanza, sino como los ordena la biología actual: por su historia evolutiva y por organelas clave.</p>
+  </header>
+
+  <!-- ===== GLOSARIO ===== -->
+  <section class="hoja" id="glosario">
+    <span class="num">Hoja 0</span>
+    <h2>Glosario: la jerga sin vueltas</h2>
+    <div class="glosario-grid">
+      <div class="termino"><span class="simbolo">🦠</span><span class="def"><b>Protozoo</b> — término <b>informal</b> para eucariotas unicelulares heterótrofos. No es un grupo evolutivo real: son ramas muy separadas del árbol.</span></div>
+      <div class="termino"><span class="simbolo">🌿</span><span class="def"><b>Parafilético</b> — agrupamiento que deja afuera a algunos descendientes del ancestro común. Por eso "protozoo" sirve para estudiar, no como clado.</span></div>
+      <div class="termino"><span class="simbolo">🧬</span><span class="def"><b>Cinetoplasto</b> — masa enorme de ADN mitocondrial dentro de una única mitocondria gigante. Marca a los <i class="sp">cinetoplastideos</i>.</span></div>
+      <div class="termino"><span class="simbolo">🔥</span><span class="def"><b>Hidrogenosoma</b> — organela que hace ATP por fermentación y libera H₂. Reemplaza a la mitocondria en ambientes anaerobios (parabasálidos).</span></div>
+      <div class="termino"><span class="simbolo">▫️</span><span class="def"><b>Mitosoma</b> — mitocondria ultra-reducida, sin genoma ni producción de ATP. La tienen las diplomónadas (<i class="sp">Giardia</i>) y <i class="sp">Entamoeba</i>.</span></div>
+      <div class="termino"><span class="simbolo">〜</span><span class="def"><b>Flagelo</b> — látigo largo para nadar. La <b>membrana ondulante</b> es un flagelo adherido al cuerpo por una lámina.</span></div>
+      <div class="termino"><span class="simbolo">🫧</span><span class="def"><b>Seudópodo</b> — proyección temporal del citoplasma para moverse y comer (fagocitosis). Según su forma: <b>lobopodio</b>, <b>filopodio</b>, <b>axopodio</b>.</span></div>
+      <div class="termino"><span class="simbolo">🏺</span><span class="def"><b>Testa / teca</b> — caparazón de la ameba, orgánico o mineral (carbonato de calcio, sílice). Foraminíferos y tecamebas.</span></div>
+      <div class="termino"><span class="simbolo">💧</span><span class="def"><b>Vacuola contráctil</b> — bomba de achique: expulsa el agua que entra por ósmosis en agua dulce (osmorregulación).</span></div>
+      <div class="termino"><span class="simbolo">🔄</span><span class="def"><b>Estadios</b> — formas del ciclo: <b>tripomastigota</b> (infectante), <b>amastigota</b> (reproductiva intracelular), <b>epimastigota</b>, <b>promastigota</b>.</span></div>
+      <div class="termino"><span class="simbolo">🦟</span><span class="def"><b>Vector</b> — el que transmite el parásito (vinchuca, mosca tsé-tsé, flebótomo). <b>Reservorio</b> — animal que mantiene al parásito en la naturaleza.</span></div>
+      <div class="termino"><span class="simbolo">🎭</span><span class="def"><b>Variación antigénica</b> — el parásito cambia las proteínas de su superficie para escapar del sistema inmune. <i class="sp">Trypanosoma</i> puede cambiarlas ~1000 veces.</span></div>
+      <div class="termino"><span class="simbolo">🧭</span><span class="def"><b>Crestas mitocondriales tubulares</b> — pliegues internos con forma de tubo (no de estante). Carácter que comparten muchos Rhizaria y alveolados.</span></div>
+      <div class="termino"><span class="simbolo">🌡️</span><span class="def"><b>Zoonosis vectorial</b> — enfermedad que salta de animales a humanos a través de un vector. Chagas y Leishmaniasis son endémicas en Argentina.</span></div>
+    </div>
+  </section>
+
+  <!-- ===== INTRO: ÁRBOL ===== -->
+  <section class="hoja" id="arbol">
+    <span class="num">Tema 1</span>
+    <h2>"Protozoo" no es un grupo: es una forma de vida</h2>
+    <p>Un protozoo es cualquier <mark>eucariota unicelular heterótrofo</mark>: una sola célula con núcleo que caza, come y se reproduce por su cuenta. El problema es que esta forma de vida apareció en <b>ramas muy distintas</b> del árbol de los eucariotas. Un flagelado que causa Chagas y una ameba con caparazón de calcio están tan lejos entre sí como vos de un hongo.</p>
+    <p>Por eso la clasificación de <b>Adl et al. (2012, 2019)</b> —la que usa tu cátedra— ya no habla de "reino Protista". Reparte a estos organismos en los grandes <b>supergrupos</b> eucariotas:</p>
+    <ul>
+      <li><b>SAR</b> = <b>S</b>tramenopiles + <b>A</b>lveolata + <b>R</b>hizaria. Acá caen las <b>amebas con filopodios y axopodios</b>: foraminíferos, radiolarios, heliozoos.</li>
+      <li><b>Excavata</b> — flagelados como los <b>cinetoplastideos</b> (<i class="sp">Trypanosoma</i>, <i class="sp">Leishmania</i>), <b>parabasálidos</b> (<i class="sp">Trichomonas</i>) y <b>diplomónadas</b> (<i class="sp">Giardia</i>). También <i class="sp">Naegleria</i>.</li>
+      <li><b>Amorphea / Opisthokonta</b> — las <b>amebas con lobopodios</b> (<i class="sp">Amoeba</i>, <i class="sp">Entamoeba</i>) y los <b>coanoflagelados</b>, que son el <span class="azul">grupo hermano de los animales</span>.</li>
+    </ul>
+    <div class="caja evolutivo"><span class="cab">De dónde venís</span>Los <b>coanoflagelados</b> tienen un collar de microvellosidades rodeando un flagelo, idéntico a los <b>coanocitos</b> de las esponjas. El ancestro de todos los animales —incluido vos— era muy parecido a uno de estos protozoos. Tus "parientes" unicelulares.</div>
+    <div class="nota">→ Moraleja para el parcial: si te preguntan "¿protozoo es un taxón?", la respuesta es <b>no, es parafilético</b>. Es una categoría cómoda, no un grupo natural.</div>
+  </section>
+
+  <!-- ===== FLAGELADOS ===== -->
+  <section class="hoja" id="flagelados">
+    <span class="num">Tema 2</span>
+    <h2>Flagelados: clasificados por su mitocondria rara</h2>
+    <p>Todos nadan con flagelos, así que eso no los distingue. Lo que sí los separa es una decisión evolutiva profunda: <mark>qué hicieron con la mitocondria</mark> al adaptarse a ambientes sin oxígeno (muchos son parásitos del intestino o la sangre). Tres soluciones, tres grupos:</p>
+
+    <div class="experimento">
+      <div class="titulo">EXPERIMENTO 1 <span class="tag">flagelados</span> Elegí un grupo y mirá su organela clave</div>
+      <canvas id="cv1" class="lienzo" width="680" height="330"></canvas>
+      <div class="panel">
+        <div class="grupo">
+          <button class="tab activo" data-f="0" id="fg0">Cinetoplastideos</button>
+          <button class="tab" data-f="1" id="fg1">Parabasálidos</button>
+          <button class="tab" data-f="2" id="fg2">Diplomónadas</button>
+        </div>
+      </div>
+      <div class="ficha" id="f_ficha"></div>
+    </div>
+
+    <table class="chuleta">
+      <thead><tr><th>Grupo</th><th>Organela / rasgo</th><th>Estructura distintiva</th><th>Género médico</th></tr></thead>
+      <tbody>
+        <tr><td><b>Cinetoplastideos</b></td><td><b>Cinetoplasto</b> (mega-ADN mitocondrial)</td><td>Bolsillo flagelar, microtúbulos subpeliculares</td><td><i class="sp">Trypanosoma</i>, <i class="sp">Leishmania</i></td></tr>
+        <tr><td><b>Parabasálidos</b></td><td><b>Hidrogenosoma</b> (sin mitocondria clásica)</td><td>Axostilo, membrana ondulante, 4–6 flagelos</td><td><i class="sp">Trichomonas vaginalis</i></td></tr>
+        <tr><td><b>Diplomónadas</b></td><td><b>Mitosoma</b> (mitocondria fantasma)</td><td>Dos núcleos, 8 flagelos, forma de "carita"</td><td><i class="sp">Giardia intestinalis</i></td></tr>
+      </tbody>
+    </table>
+    <div class="caja dato"><span class="cab">Por qué importa la organela</span>El hidrogenosoma y el mitosoma <b>derivan de mitocondrias</b> que perdieron función en la evolución hacia el parasitismo anaerobio. Son la prueba de que estos flagelados <b>tuvieron</b> mitocondria: no son "primitivos", son <b>reducidos</b>. Ese matiz lo preguntan.</div>
+  </section>
+
+  <!-- ===== CINETOPLASTIDEOS MÉDICOS ===== -->
+  <section class="hoja" id="chagas">
+    <span class="num">Tema 3</span>
+    <h2>Los que enferman: Chagas, sueño y Leishmania</h2>
+    <p>Los cinetoplastideos del orden <b>Trypanosomatida</b> son responsables de tres enfermedades enormes, dos de ellas <b>endémicas en Argentina</b>. Todas son <b>zoonosis vectoriales</b>: un insecto lleva el parásito de un reservorio animal al humano.</p>
+
+    <h3>Enfermedad de Chagas — <i class="sp">Trypanosoma cruzi</i></h3>
+    <p>La "tripanosomiasis americana". En Argentina hay <b>~3,2 millones de infectados</b>. La transmite la <b>vinchuca</b> (<i class="sp">Triatoma infestans</i>), que es hematófaga y de hábitos nocturnos. Ojo con el detalle clave del contagio: <mark>no es por la picadura sino por las heces</mark> que la vinchuca deja al lado; el parásito entra cuando uno se rasca. Seguí el ciclo:</p>
+
+    <div class="experimento">
+      <div class="titulo">EXPERIMENTO 2 <span class="tag">ciclo de vida</span> Cómo circula <i class="sp">T. cruzi</i></div>
+      <div class="ciclo" id="ciclo">
+        <div class="ciclo-nodos">
+          <button class="cn activo" data-c="0">1 · Vinchuca pica</button>
+          <button class="cn" data-c="1">2 · Heces → entra</button>
+          <button class="cn" data-c="2">3 · Macrófago</button>
+          <button class="cn" data-c="3">4 · Amastigota</button>
+          <button class="cn" data-c="4">5 · Se dispersa</button>
+          <button class="cn" data-c="5">6 · Otra vinchuca</button>
+        </div>
+      </div>
+      <div class="veredicto" id="ciclo_v"></div>
+    </div>
+
+    <div class="caja medico"><span class="cab">Formas clínicas</span><b>Aguda:</b> suele pasar desapercibida; el <b>signo de Romaña</b> (hinchazón de un párpado) marca la puerta de entrada. <b>Crónica</b> (décadas después, en ~30%): <b>cardiopatía chagásica</b> (cardiomegalia, aneurisma apical), <b>megaesófago</b> y <b>megacolon</b> por destrucción de plexos nerviosos. Tratamiento: <b>Benznidazol</b> o <b>Nifurtimox</b>, eficaces sobre todo si se dan temprano.</div>
+    <div class="caja dato"><span class="cab">Escape inmune</span>En sangre, <i class="sp">T. cruzi</i> y sus primos africanos hacen <b>variación antigénica</b>: reemplazan las glicoproteínas de superficie una y otra vez (hasta ~1000 variantes). Cuando tu sistema inmune aprende a reconocer una, el parásito ya cambió de disfraz. Por eso cuesta tanto una vacuna.</div>
+
+    <h3>Otras dos del mismo linaje</h3>
+    <ul>
+      <li><b>Enfermedad del sueño</b> — <i class="sp">Trypanosoma brucei</i>, vector la <b>mosca tsé-tsé</b> (<i class="sp">Glossina</i>), en África. Atraviesa la barrera hematoencefálica: altera el ciclo del sueño y, sin tratamiento, es mortal.</li>
+      <li><b>Leishmaniasis</b> — <i class="sp">Leishmania</i> spp., vector el <b>flebótomo</b> (<i class="sp">Lutzomyia</i> en el Nuevo Mundo). Formas <b>cutánea</b> (úlceras), <b>mucocutánea</b> (destruye mucosas de nariz/boca) y <b>visceral</b> (hígado/bazo, mortal si no se trata). En Argentina es endémica del <b>NOA y NEA</b> (Salta es el principal foco), con el <b>perro</b> como reservorio clave de la visceral.</li>
+    </ul>
+    <div class="nota">→ Truco: los estadios se nombran por dónde está el flagelo respecto del núcleo. <b>Tripo</b>mastigota = forma que circula/infecta; <b>a</b>mastigota = sin flagelo libre, se divide dentro de la célula. "a" de "adentro y sin cola".</div>
+  </section>
+
+  <!-- ===== AMEBAS / RHIZARIA ===== -->
+  <section class="hoja" id="amebas">
+    <span class="num">Tema 4</span>
+    <h2>Amebas y Rhizaria: la clave son los seudópodos</h2>
+    <p>Las amebas no tienen forma fija: fluyen. El motor es la <b>transición sol–gel</b> del citoplasma: adelante el citoplasma pasa de gel a sol y avanza, atrás vuelve a gel, y la corriente interna (<b>ciclosis</b>) lo empuja mientras la célula se adhiere al sustrato. Ahora bien, <mark>la forma del seudópodo divide a los grupos</mark>. Elegí uno:</p>
+
+    <div class="experimento">
+      <div class="titulo">EXPERIMENTO 3 <span class="tag">seudópodos</span> Tres formas de estirar la célula</div>
+      <canvas id="cv3" class="lienzo" width="680" height="330"></canvas>
+      <div class="panel">
+        <div class="grupo">
+          <button class="tab activo" data-s="0" id="s0">Lobopodios</button>
+          <button class="tab" data-s="1" id="s1">Filopodios</button>
+          <button class="tab" data-s="2" id="s2">Axopodios</button>
+        </div>
+      </div>
+      <div class="ficha" id="s_ficha"></div>
+    </div>
+
+    <h3>El zoológico de Rhizaria</h3>
+    <ul>
+      <li><b>Foraminíferos</b> — marinos, con <b>testa calcárea</b> de varias cámaras (prolóculo + cámaras sucesivas) y <b>reticulopodios</b> que salen por los poros. Son <b>fósiles guía</b>: los <i class="sp">Nummulites</i> construyeron literalmente la piedra de las pirámides de Egipto.</li>
+      <li><b>Radiolarios</b> — marinos planctónicos, esqueleto de <b>sílice</b> o sulfato de estroncio con <b>cápsula central</b> que separa endo- y ectoplasma. Junto con foraminíferos forman el <b>lodo oceánico</b>; bioindicadores desde el Cámbrico.</li>
+      <li><b>Heliozoos</b> — dulceacuícolas, "animales-sol": <b>axopodios</b> rígidos radiales con <b>extrusomas</b> en la punta para atrapar presas.</li>
+    </ul>
+    <div class="caja evolutivo"><span class="cab">Fotosimbiosis</span>Muchos foraminíferos y radiolarios <b>alojan algas</b> (diatomeas, dinoflagelados) en su citoplasma y viven en parte de su fotosíntesis. A veces la relación es despareja: el huésped se beneficia y el alga sufre alteraciones. Simbiosis no siempre es "todos ganan".</div>
+
+    <h3>Amebas que enferman</h3>
+    <ul>
+      <li><b><i class="sp">Entamoeba histolytica</i></b> — <b>disentería amebiana</b>: invade la mucosa intestinal, causa diarrea con sangre, dolor y hasta perforación. Es de las parasitosis más letales en zonas tropicales (tercera tras malaria y esquistosomiasis). Tiene <b>mitosomas</b>, igual que <i class="sp">Giardia</i>.</li>
+      <li><b><i class="sp">Naegleria fowleri</i></b> — la "ameba comecerebros": <b>meningoencefalitis amebiana</b>, casi siempre mortal. Es <b>anfizoica</b> (vive libre o parásita) y <b>termófila</b> (aguas cálidas). Tiene fase ameboide, fase flagelada y quiste de resistencia.</li>
+    </ul>
+    <div class="caja dato"><span class="cab">Tecamebas</span>Las amebas <b>con teca</b> se fabrican caparazón: <i class="sp">Arcella</i> secreta material proteico que endurece al aire; <i class="sp">Difflugia</i> se pega granitos de arena; <i class="sp">Euglypha</i> arma placas de sílice. Algunas "caminan" apoyándose en varios lobopodios como patas.</div>
+  </section>
+
+  <!-- ===== CHULETA + QUIZ ===== -->
+  <section class="hoja" id="chuleta">
+    <span class="num">Cierre</span>
+    <h2>Chuleta + mini examen</h2>
+    <table class="chuleta">
+      <thead><tr><th>Si te preguntan…</th><th>La respuesta corta</th></tr></thead>
+      <tbody>
+        <tr><td>¿"Protozoo" es un grupo natural?</td><td>No: es parafilético. Se reparten en supergrupos (SAR, Excavata, Amorphea)</td></tr>
+        <tr><td>¿Qué distingue a los 3 flagelados?</td><td>Su organela: cinetoplasto / hidrogenosoma / mitosoma</td></tr>
+        <tr><td>¿Cómo se contagia el Chagas?</td><td>Por las heces de la vinchuca (contaminación), no por la picadura</td></tr>
+        <tr><td>¿Cómo escapa <i class="sp">Trypanosoma</i> del sistema inmune?</td><td>Variación antigénica de sus glicoproteínas de superficie</td></tr>
+        <tr><td>¿Qué separa a las amebas de Rhizaria?</td><td>El tipo de seudópodo: lobopodio / filopodio / axopodio</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Mini examen (sin nota, tranqui)</h3>
+
+    <div class="pregunta">
+      <p class="q">1. Un flagelado intestinal con dos núcleos simétricos (cara de "carita"), 8 flagelos y mitosomas es…</p>
+      <button class="opcion" data-q="1" data-ok="">Trypanosoma cruzi</button>
+      <button class="opcion" data-q="1" data-ok="0">Giardia intestinalis (diplomónada)</button>
+      <button class="opcion" data-q="1" data-ok="">Trichomonas vaginalis (parabasálido)</button>
+      <div class="feedback" id="f1"></div>
+    </div>
+
+    <div class="pregunta">
+      <p class="q">2. El cinetoplasto es…</p>
+      <button class="opcion" data-q="2" data-ok="0">Una gran masa de ADN dentro de la única mitocondria de los cinetoplastideos</button>
+      <button class="opcion" data-q="2" data-ok="">Un flagelo modificado para nadar más rápido</button>
+      <button class="opcion" data-q="2" data-ok="">El caparazón de calcio de los foraminíferos</button>
+      <div class="feedback" id="f2"></div>
+    </div>
+
+    <div class="pregunta">
+      <p class="q">3. En el ciclo de <i class="sp">T. cruzi</i>, la forma que se divide DENTRO de las células humanas (ej. macrófagos) es…</p>
+      <button class="opcion" data-q="3" data-ok="">El tripomastigota</button>
+      <button class="opcion" data-q="3" data-ok="0">El amastigota</button>
+      <button class="opcion" data-q="3" data-ok="">El promastigota</button>
+      <div class="feedback" id="f3"></div>
+    </div>
+
+    <div class="pregunta">
+      <p class="q">4. Foraminíferos y radiolarios se diferencian de <i class="sp">Amoeba</i> porque tienen…</p>
+      <button class="opcion" data-q="4" data-ok="0">Filopodios/axopodios (finos o rígidos), no lobopodios romos</button>
+      <button class="opcion" data-q="4" data-ok="">Flagelos en vez de seudópodos</button>
+      <button class="opcion" data-q="4" data-ok="">Hidrogenosomas en lugar de mitocondrias</button>
+      <div class="feedback" id="f4"></div>
+    </div>
+
+    <div class="pregunta">
+      <p class="q">5. La leishmaniasis visceral es endémica en el NOA argentino. ¿Cuál es un reservorio clave?</p>
+      <button class="opcion" data-q="5" data-ok="">La vinchuca</button>
+      <button class="opcion" data-q="5" data-ok="0">El perro doméstico</button>
+      <button class="opcion" data-q="5" data-ok="">Los foraminíferos</button>
+      <div class="feedback" id="f5"></div>
+    </div>
+
+    <p class="cierre">Fin del cuaderno 01. Seguí con <a class="link" href="ciclo-mitosis.html">Ciclo y mitosis →</a></p>
+  </section>
+
+</div>
+<script src="comun.js"></script>
+<script>
+window.EXPLICA = {
+  "1":"Dos núcleos + 8 flagelos + mitosomas = Giardia (diplomónada). Trypanosoma es alargado con un solo núcleo y cinetoplasto; Trichomonas tiene axostilo e hidrogenosomas.",
+  "2":"El cinetoplasto es ADN mitocondrial condensado en una masa gigante dentro de la mitocondria única. Le da el nombre al grupo.",
+  "3":"El amastigota es la forma intracelular sin flagelo libre, que se multiplica dentro de macrófagos. El tripomastigota circula por sangre e infecta.",
+  "4":"El tipo de seudópodo es el criterio: lobopodios romos (Amoeba/Entamoeba) vs filopodios/reticulopodios (foraminíferos) vs axopodios rígidos (radiolarios, heliozoos).",
+  "5":"El perro es el reservorio doméstico central de la leishmaniasis visceral; por eso el control incluye tenencia responsable y vigilancia canina."
+};
+
+/* ============ EXP 1: flagelados ============ */
+(function(){
+  const cv=$("cv1"); if(!cv) return;
+  const {ctx,W,H}=setupCanvas(cv);
+  const cx=W/2, cy=H/2-6;
+  let sel=0, t=0;
+
+  const fichas=[
+    {n:"Cinetoplastideos (Excavata)",
+     org:"<b>Cinetoplasto:</b> masa de ADN dentro de una mitocondria única y gigante.",
+     ras:"Flagelo con <b>membrana ondulante</b>, microtúbulos subpeliculares que rigidizan el cuerpo, nutrición por <b>pinocitosis</b> en el bolsillo flagelar.",
+     ej:"<i class='sp'>Trypanosoma cruzi</i>, <i class='sp'>T. brucei</i>, <i class='sp'>Leishmania</i>.",
+     dato:"Zoonosis vectoriales (Chagas, sueño, leishmaniasis). Variación antigénica."},
+    {n:"Parabasálidos (Excavata)",
+     org:"<b>Hidrogenosoma:</b> hace ATP por fermentación y libera H₂. Sin mitocondria clásica.",
+     ras:"<b>Axostilo</b> rígido que atraviesa la célula, <b>membrana ondulante</b>, 4–6 flagelos, cuerpo periforme.",
+     ej:"<i class='sp'>Trichomonas vaginalis</i> (ITS), <i class='sp'>Tritrichomonas foetus</i> (abortos en bovinos).",
+     dato:"No forma quistes: se transmite directo. Anaerobio."},
+    {n:"Diplomónadas (Excavata)",
+     org:"<b>Mitosoma:</b> mitocondria reducida sin genoma ni ATP.",
+     ras:"<b>Dos núcleos</b> simétricos (aspecto de carita), <b>8 flagelos</b>, disco adhesivo ventral. Forma quistes.",
+     ej:"<i class='sp'>Giardia intestinalis</i> (giardiasis: diarrea, malabsorción).",
+     dato:"Se adhiere al epitelio intestinal y roba nutrientes. Muy resistente como quiste."}
+  ];
+
+  function flagelo(x0,y0,ang,largo,fase,amp){
+    ctx.strokeStyle=COL.tinta; ctx.lineWidth=2.5; ctx.lineCap="round"; ctx.beginPath();
+    for(let i=0;i<=30;i++){
+      const d=i/30*largo;
+      const px=x0+Math.cos(ang)*d - Math.sin(ang)*Math.sin(fase-i*0.4)*amp*(i/30);
+      const py=y0+Math.sin(ang)*d + Math.cos(ang)*Math.sin(fase-i*0.4)*amp*(i/30);
+      i?ctx.lineTo(px,py):ctx.moveTo(px,py);
+    }
+    ctx.stroke(); ctx.lineCap="butt";
+  }
+
+  function pintar(){
+    ctx.clearRect(0,0,W,H);
+    if(sel===0){ // TRYPANOSOMA alargado
+      ctx.save(); ctx.translate(cx,cy); ctx.rotate(-0.15);
+      // cuerpo fusiforme largo
+      ctx.fillStyle="rgba(150,200,175,.6)"; ctx.strokeStyle=COL.tinta; ctx.lineWidth=2.5;
+      ctx.beginPath(); ctx.ellipse(0,0,120,26,0,0,7); ctx.fill(); ctx.stroke();
+      // membrana ondulante (borde superior ondulado)
+      ctx.strokeStyle=COL.azul; ctx.lineWidth=2; ctx.beginPath();
+      for(let i=0;i<=60;i++){ const x=-120+i*4; const y=-22+Math.sin(t*0.12+i*0.5)*7; i?ctx.lineTo(x,y):ctx.moveTo(x,y);} ctx.stroke();
+      // flagelo libre saliendo adelante
+      flagelo(120,-6,0.02,70,t*0.15,10);
+      // núcleo
+      ctx.fillStyle="rgba(28,93,76,.35)"; ctx.beginPath(); ctx.arc(-10,0,15,0,7); ctx.fill();
+      // cinetoplasto (punto rojo marcado)
+      ctx.fillStyle=COL.rojo; ctx.beginPath(); ctx.arc(60,2,8,0,7); ctx.fill();
+      ctx.restore();
+      etiqueta(ctx,"cinetoplasto",cx+40,cy+40,COL.rojo,14);
+      etiqueta(ctx,"membrana ondulante",cx-140,cy-40,COL.azul,13);
+      etiqueta(ctx,"flagelo",cx+150,cy-24,COL.tinta,13);
+
+    } else if(sel===1){ // TRICHOMONAS periforme
+      ctx.save(); ctx.translate(cx,cy);
+      ctx.fillStyle="rgba(150,200,175,.6)"; ctx.strokeStyle=COL.tinta; ctx.lineWidth=2.5;
+      ctx.beginPath(); ctx.moveTo(0,-70); ctx.quadraticCurveTo(58,-30,30,70); ctx.quadraticCurveTo(0,88,-30,70); ctx.quadraticCurveTo(-58,-30,0,-70); ctx.closePath(); ctx.fill(); ctx.stroke();
+      // axostilo (varilla que sale por abajo)
+      ctx.strokeStyle=COL.rojo; ctx.lineWidth=5; ctx.lineCap="round";
+      ctx.beginPath(); ctx.moveTo(0,-40); ctx.lineTo(-2,96); ctx.stroke(); ctx.lineCap="butt";
+      // 4 flagelos anteriores
+      for(let k=-2;k<=1;k++){ flagelo(k*8,-66,-Math.PI/2+k*0.25,55,t*0.2+k,7); }
+      // hidrogenosomas (puntitos naranjas)
+      ctx.fillStyle=COL.naranja;
+      [[-14,10],[12,4],[-6,30],[16,26]].forEach(function(p){ ctx.beginPath(); ctx.arc(p[0],p[1],5,0,7); ctx.fill(); });
+      // núcleo
+      ctx.fillStyle="rgba(28,93,76,.35)"; ctx.beginPath(); ctx.arc(0,-28,13,0,7); ctx.fill();
+      ctx.restore();
+      etiqueta(ctx,"axostilo",cx+10,cy+92,COL.rojo,14);
+      etiqueta(ctx,"hidrogenosomas",cx+30,cy+30,COL.naranja,13);
+      etiqueta(ctx,"flagelos",cx-120,cy-56,COL.tinta,13);
+
+    } else { // GIARDIA "carita" con 2 núcleos
+      ctx.save(); ctx.translate(cx,cy);
+      ctx.fillStyle="rgba(150,200,175,.6)"; ctx.strokeStyle=COL.tinta; ctx.lineWidth=2.5;
+      ctx.beginPath(); ctx.moveTo(0,-64); ctx.quadraticCurveTo(70,-64,66,10); ctx.quadraticCurveTo(40,80,0,80); ctx.quadraticCurveTo(-40,80,-66,10); ctx.quadraticCurveTo(-70,-64,0,-64); ctx.closePath(); ctx.fill(); ctx.stroke();
+      // 2 núcleos como ojos
+      ctx.fillStyle="rgba(28,93,76,.4)";
+      ctx.beginPath(); ctx.arc(-26,-24,15,0,7); ctx.fill();
+      ctx.beginPath(); ctx.arc(26,-24,15,0,7); ctx.fill();
+      ctx.fillStyle="rgba(28,93,76,.75)";
+      ctx.beginPath(); ctx.arc(-26,-24,6,0,7); ctx.fill();
+      ctx.beginPath(); ctx.arc(26,-24,6,0,7); ctx.fill();
+      // disco adhesivo (boca)
+      ctx.strokeStyle=COL.azul; ctx.lineWidth=2.5; ctx.beginPath(); ctx.arc(0,18,26,0.15*Math.PI,0.85*Math.PI); ctx.stroke();
+      // mitosomas (puntitos gris tenue)
+      ctx.fillStyle="rgba(120,120,120,.6)";
+      [[-8,-4],[8,-4]].forEach(function(p){ ctx.beginPath(); ctx.arc(p[0],p[1],4,0,7); ctx.fill(); });
+      // 8 flagelos (varios pares)
+      flagelo(-20,78,Math.PI/2+0.2,55,t*0.2,7); flagelo(20,78,Math.PI/2-0.2,55,t*0.2+1,7);
+      flagelo(-60,20,Math.PI-0.4,45,t*0.2+2,6); flagelo(60,20,0.4,45,t*0.2+3,6);
+      ctx.restore();
+      etiqueta(ctx,"2 núcleos",cx-118,cy-24,COL.tinta,13);
+      etiqueta(ctx,"disco adhesivo",cx+40,cy+22,COL.azul,13);
+    }
+  }
+  function loop(){ pintar(); t++; requestAnimationFrame(loop); }
+  function ficha(){
+    const f=fichas[sel];
+    $("f_ficha").innerHTML=
+      "<div class='linea'><b>"+f.n+"</b></div>"+
+      "<div class='linea'>🔬 <b>Organela clave:</b> "+f.org+"</div>"+
+      "<div class='linea'>🧩 <b>Rasgos:</b> "+f.ras+"</div>"+
+      "<div class='linea'>🦠 <b>Ejemplos:</b> "+f.ej+"</div>"+
+      "<div class='linea'>💡 <b>Dato:</b> "+f.dato+"</div>";
+  }
+  ["fg0","fg1","fg2"].forEach(function(id,i){
+    $(id).addEventListener("click",function(){
+      sel=i;
+      document.querySelectorAll("#flagelados [data-f]").forEach(function(b){b.classList.remove("activo");});
+      $(id).classList.add("activo"); ficha(); pintar();
+    });
+  });
+  ficha(); loop();
+})();
+
+/* ============ EXP 2: ciclo de Chagas ============ */
+(function(){
+  const textos=[
+    "<b>1. La vinchuca pica de noche.</b> Es hematófaga: se alimenta de sangre mientras dormís. Mientras chupa, <b>defeca cerca de la picadura</b>. En sus heces van los <b>tripomastigotas metacíclicos</b> (forma infectante).",
+    "<b>2. El parásito entra por las heces.</b> Al rascarte, arrastrás las heces hacia la herida, los ojos o mucosas. <mark>El contagio es por las heces, no por la mordida.</mark> El tripomastigota atraviesa la piel/mucosa.",
+    "<b>3. Invade una célula.</b> Entra en macrófagos y otras células del huésped. Ahí pierde el flagelo libre y se transforma en <b>amastigota</b>.",
+    "<b>4. El amastigota se multiplica.</b> Dentro de la célula se divide por fisión binaria muchas veces, llenándola. Es la forma <b>reproductiva intracelular</b>.",
+    "<b>5. Se dispersa por el cuerpo.</b> Los amastigotas vuelven a tripomastigotas, revientan la célula y viajan por la sangre a <b>corazón y tubo digestivo</b> (de ahí la cardiopatía, el megaesófago y el megacolon).",
+    "<b>6. Otra vinchuca cierra el ciclo.</b> Un insecto pica a la persona (o a un reservorio: perro, comadreja) infectada, chupa tripomastigotas, y dentro de su intestino se vuelven <b>epimastigotas</b> que se multiplican y reinician todo."
+  ];
+  const v=$("ciclo_v");
+  function set(i){
+    document.querySelectorAll("#ciclo .cn").forEach(function(b){ b.classList.toggle("activo", +b.dataset.c===i); });
+    v.innerHTML=textos[i];
+  }
+  document.querySelectorAll("#ciclo .cn").forEach(function(b){ b.addEventListener("click",function(){ set(+b.dataset.c); }); });
+  set(0);
+})();
+
+/* ============ EXP 3: tipos de seudópodo ============ */
+(function(){
+  const cv=$("cv3"); if(!cv) return;
+  const {ctx,W,H}=setupCanvas(cv);
+  const cx=W/2, cy=H/2-6;
+  let sel=0, t=0;
+  const fichas=[
+    {n:"Lobopodios",
+     d:"Expansiones <b>romas, tipo dedo</b>, con ecto y endoplasma bien diferenciados. La ameba avanza por transición sol–gel.",
+     ej:"<i class='sp'>Amoeba proteus</i>, <i class='sp'>Entamoeba</i> (Amorphea).",
+     dato:"Comen por fagocitosis envolviendo la presa con el mismo seudópodo."},
+    {n:"Filopodios / reticulopodios",
+     d:"Proyecciones <b>finas y ramificadas</b> que se fusionan formando una red (anastomosis). Salen por los poros de la testa.",
+     ej:"Foraminíferos (Rhizaria).",
+     dato:"Con testa calcárea de varias cámaras. Fósiles guía (Nummulites)."},
+    {n:"Axopodios",
+     d:"Rayos <b>rígidos y radiales</b> sostenidos por un eje de microtúbulos (axonema). Se contraen despolimerizando los microtúbulos.",
+     ej:"Radiolarios y heliozoos (Rhizaria).",
+     dato:"Atrapan presas con extrusomas en la punta. Aspecto de sol."}
+  ];
+  function blobPts(base,wobble,ph,pts){
+    const a=[];
+    for(let i=0;i<=pts;i++){ const an=i/pts*Math.PI*2;
+      const r=base+wobble*Math.sin(an*3+ph)+wobble*0.5*Math.sin(an*5-ph*1.2);
+      a.push({x:cx+r*Math.cos(an),y:cy+r*Math.sin(an)}); }
+    return a;
+  }
+  function pintar(){
+    ctx.clearRect(0,0,W,H);
+    if(sel===0){ // LOBOPODIOS
+      const ph=t*0.05;
+      for(let k=0;k<3;k++){
+        const a=ph*0.4+k*2.1; const rr=72+24*Math.max(0,Math.sin(t*0.03+k*2));
+        ctx.strokeStyle="rgba(150,200,175,.55)"; ctx.lineWidth=30; ctx.lineCap="round";
+        ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(cx+Math.cos(a)*rr,cy+Math.sin(a)*rr); ctx.stroke();
+      }
+      ctx.lineCap="butt";
+      const p=blobPts(58,16,ph,60);
+      ctx.beginPath(); p.forEach(function(q,i){ i?ctx.lineTo(q.x,q.y):ctx.moveTo(q.x,q.y);}); ctx.closePath();
+      ctx.fillStyle="rgba(150,200,175,.7)"; ctx.fill(); ctx.strokeStyle=COL.tinta; ctx.lineWidth=2.5; ctx.stroke();
+      ctx.fillStyle="rgba(28,93,76,.3)"; ctx.beginPath(); ctx.arc(cx+8,cy,15,0,7); ctx.fill();
+      etiqueta(ctx,"seudópodo romo →",cx+70,cy-46,COL.tinta,13);
+
+    } else if(sel===1){ // FILOPODIOS red ramificada + testa
+      // testa
+      ctx.fillStyle="rgba(228,231,214,.9)"; ctx.strokeStyle=COL.tinta; ctx.lineWidth=2.5;
+      ctx.beginPath(); ctx.arc(cx,cy,50,0,7); ctx.fill(); ctx.stroke();
+      // espiral de cámaras
+      ctx.strokeStyle="rgba(28,93,76,.4)"; ctx.lineWidth=1.5;
+      for(let k=1;k<=4;k++){ ctx.beginPath(); ctx.arc(cx-4,cy,12*k,0,7); ctx.stroke(); }
+      // red de filopodios finos anastomosados
+      ctx.strokeStyle=COL.tinta; ctx.lineWidth=1;
+      const N=14;
+      for(let i=0;i<N;i++){
+        const a=i/N*Math.PI*2 + Math.sin(t*0.02)*0.05;
+        let x=cx+Math.cos(a)*50, y=cy+Math.sin(a)*50;
+        ctx.beginPath(); ctx.moveTo(x,y);
+        for(let j=0;j<3;j++){
+          const len=28+10*Math.sin(t*0.03+i+j);
+          const na=a+Math.sin(i*2+j+t*0.01)*0.4;
+          x+=Math.cos(na)*len; y+=Math.sin(na)*len;
+          ctx.lineTo(x,y);
+        }
+        ctx.stroke();
+        // conexiones (anastomosis) entre vecinos
+        if(i%2===0){ ctx.strokeStyle="rgba(28,93,76,.4)"; ctx.beginPath();
+          ctx.moveTo(cx+Math.cos(a)*80,cy+Math.sin(a)*80);
+          ctx.lineTo(cx+Math.cos(a+0.45)*80,cy+Math.sin(a+0.45)*80); ctx.stroke();
+          ctx.strokeStyle=COL.tinta; }
+      }
+      etiqueta(ctx,"testa (varias cámaras)",cx-56,cy+72,COL.tinta,12);
+      etiqueta(ctx,"red anastomosada",cx+66,cy-64,COL.tinta,12);
+
+    } else { // AXOPODIOS rayos rígidos
+      const N=22;
+      ctx.strokeStyle=COL.tinta; ctx.lineWidth=2;
+      for(let i=0;i<N;i++){
+        const a=i/N*Math.PI*2;
+        const len=120+8*Math.sin(t*0.06+i);
+        ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(cx+Math.cos(a)*len,cy+Math.sin(a)*len); ctx.stroke();
+        // extrusoma en la punta
+        ctx.fillStyle=COL.rojo; ctx.beginPath(); ctx.arc(cx+Math.cos(a)*len,cy+Math.sin(a)*len,3,0,7); ctx.fill();
+      }
+      // cápsula central
+      ctx.fillStyle="rgba(150,200,175,.75)"; ctx.strokeStyle=COL.tinta; ctx.lineWidth=2.5;
+      ctx.beginPath(); ctx.arc(cx,cy,40,0,7); ctx.fill(); ctx.stroke();
+      ctx.strokeStyle="rgba(28,93,76,.5)"; ctx.lineWidth=1.5; ctx.setLineDash([4,4]);
+      ctx.beginPath(); ctx.arc(cx,cy,26,0,7); ctx.stroke(); ctx.setLineDash([]);
+      ctx.fillStyle="rgba(28,93,76,.4)"; ctx.beginPath(); ctx.arc(cx,cy,12,0,7); ctx.fill();
+      etiqueta(ctx,"cápsula central",cx-40,cy+64,COL.tinta,12);
+      etiqueta(ctx,"axopodios rígidos + extrusomas",cx-96,cy-118,COL.rojo,12);
+    }
+  }
+  function loop(){ pintar(); t++; requestAnimationFrame(loop); }
+  function ficha(){
+    const f=fichas[sel];
+    $("s_ficha").innerHTML=
+      "<div class='linea'><b>"+f.n+"</b></div>"+
+      "<div class='linea'>🔬 <b>Forma:</b> "+f.d+"</div>"+
+      "<div class='linea'>🦠 <b>Quién:</b> "+f.ej+"</div>"+
+      "<div class='linea'>💡 <b>Dato:</b> "+f.dato+"</div>";
+  }
+  ["s0","s1","s2"].forEach(function(id,i){
+    $(id).addEventListener("click",function(){
+      sel=i;
+      document.querySelectorAll("#amebas [data-s]").forEach(function(b){b.classList.remove("activo");});
+      $(id).classList.add("activo"); ficha(); pintar();
+    });
+  });
+  ficha(); loop();
+})();
+</script>
+</body>
+</html>

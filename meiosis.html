@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>03 · Meiosis, variabilidad y apoptosis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<nav class="navbar">
+  <a class="inicio" href="index.html">← Carpeta</a>
+  <a href="protozoos.html">Protozoos</a>
+  <a href="ciclo-mitosis.html">Ciclo · Mitosis</a>
+  <a class="actual" href="meiosis.html">Meiosis</a>
+  <a href="ejercicios.html">Ejercicios</a>
+</nav>
+<div class="carpeta">
+
+  <header class="caratula">
+    <div class="materia">Cuaderno 03 · Biología celular · Tema VII</div>
+    <h1>Meiosis: barajar y repartir la vida</h1>
+    <p class="sub">Cómo se hacen los gametos, de dónde sale la variabilidad genética, qué pasa cuando algo se separa mal, y por qué las células a veces se suicidan.</p>
+  </header>
+
+  <!-- GLOSARIO -->
+  <section class="hoja" id="glosario">
+    <span class="num">Hoja 0</span>
+    <h2>Glosario: la jerga sin vueltas</h2>
+    <div class="glosario-grid">
+      <div class="termino"><span class="simbolo">👥</span><span class="def"><b>Homólogos</b> — el par de cromosomas equivalentes: uno materno, uno paterno. Mismos genes, variantes (alelos) posiblemente distintas.</span></div>
+      <div class="termino"><span class="simbolo">🔗</span><span class="def"><b>Sinapsis</b> — el apareamiento íntimo de los homólogos en profase I, unidos por el <b>complejo sinaptonémico</b> (una cremallera proteica).</span></div>
+      <div class="termino"><span class="simbolo">🎀</span><span class="def"><b>Bivalente / tétrada</b> — el par de homólogos apareados. Como cada uno tiene 2 cromátidas, son 4 cromátidas juntas.</span></div>
+      <div class="termino"><span class="simbolo">✂️</span><span class="def"><b>Entrecruzamiento (crossing over)</b> — intercambio de segmentos entre cromátidas <b>no hermanas</b> de homólogos. Recombina genes.</span></div>
+      <div class="termino"><span class="simbolo">❌</span><span class="def"><b>Quiasma</b> — el punto en forma de X donde se ve el entrecruzamiento. Mantiene unidos a los homólogos hasta la anafase I.</span></div>
+      <div class="termino"><span class="simbolo">🎰</span><span class="def"><b>Segregación independiente</b> — cada par de homólogos se orienta al azar en metafase I. Segunda fuente de variabilidad.</span></div>
+      <div class="termino"><span class="simbolo">2n→n</span><span class="def"><b>División reduccional</b> — la meiosis I reduce el número de cromosomas a la mitad: de diploide (2n) a haploide (n).</span></div>
+      <div class="termino"><span class="simbolo">⚠️</span><span class="def"><b>No disyunción</b> — falla en la separación: homólogos (en MI) o hermanas (en MII) que no se reparten. Genera gametos con cromosomas de más o de menos.</span></div>
+      <div class="termino"><span class="simbolo">➕➖</span><span class="def"><b>Aneuploidía</b> — número anormal de cromosomas. <b>Trisomía</b> (uno de más, 2n+1) o <b>monosomía</b> (uno de menos, 2n−1).</span></div>
+      <div class="termino"><span class="simbolo">🍂</span><span class="def"><b>Apoptosis</b> — muerte celular <b>programada y ordenada</b>. La célula se desarma limpio, sin inflamar.</span></div>
+      <div class="termino"><span class="simbolo">💥</span><span class="def"><b>Necrosis</b> — muerte <b>patológica y desordenada</b>: la célula se hincha, se rompe y provoca inflamación.</span></div>
+    </div>
+  </section>
+
+  <!-- PARA QUÉ -->
+  <section class="hoja" id="sentido">
+    <span class="num">Tema 1</span>
+    <h2>¿Para qué existe la meiosis?</h2>
+    <p>Si dos células diploides (2n) se fusionaran en la fecundación, la descendencia tendría 4n, y a la generación siguiente 8n… un descontrol. La meiosis resuelve esto: <mark>reduce a la mitad</mark> el número de cromosomas para hacer <b>gametos haploides (n)</b>. Al unirse dos gametos, se restablece el 2n. El número se mantiene generación tras generación.</p>
+    <div class="clave">
+      célula germinal <b>2n</b> &nbsp;→ meiosis →&nbsp; 4 gametos <b>n</b> &nbsp;→ fecundación →&nbsp; cigoto <b>2n</b>
+      <span class="peque">Solo las células <b>germinales</b> hacen meiosis. Las somáticas hacen mitosis (2n→2n).</span>
+    </div>
+    <p>Pero la meiosis hace algo más importante que dividir: <b>genera variabilidad</b>. Y la variabilidad es materia prima de la evolución: ante condiciones adversas, cuanta más diversidad, más chance de que <b>alguien</b> sobreviva.</p>
+    <div class="caja evolutivo"><span class="cab">Asexual vs sexual</span>En la reproducción <b>asexual</b> la variación viene casi solo de <b>mutaciones</b>. En la <b>sexual</b> se suma la <b>recombinación</b> (entrecruzamiento + segregación independiente + azar de la fecundación). Por eso ningún hermano es igual a otro.</div>
+  </section>
+
+  <!-- PROFASE I -->
+  <section class="hoja" id="profase1">
+    <span class="num">Tema 2</span>
+    <h2>Profase I: la etapa estrella (y eterna)</h2>
+    <p>La profase I es larguísima (semanas en plantas; en ovocitos humanos, <b>años</b>). Es donde ocurre lo único que la mitosis nunca hace: los homólogos se aparean e intercambian material. Se divide en 5 subetapas. Avanzá y mirá un par de homólogos:</p>
+
+    <div class="experimento">
+      <div class="titulo">EXPERIMENTO 1 <span class="tag">profase I</span> Las 5 subetapas</div>
+      <canvas id="cvpro" class="lienzo" width="680" height="300"></canvas>
+      <div class="panel">
+        <div class="grupo">
+          <button class="tab vio activo" data-p="0" id="pr0">Leptoteno</button>
+          <button class="tab vio" data-p="1" id="pr1">Cigoteno</button>
+          <button class="tab vio" data-p="2" id="pr2">Paquiteno</button>
+          <button class="tab vio" data-p="3" id="pr3">Diploteno</button>
+          <button class="tab vio" data-p="4" id="pr4">Diacinesis</button>
+        </div>
+      </div>
+      <div class="veredicto" id="pro_v"></div>
+    </div>
+
+    <div class="caja examen"><span class="cab">La regla mnemotécnica</span><b>L</b>eptoteno · <b>C</b>igoteno · <b>P</b>aquiteno · <b>D</b>iploteno · <b>D</b>iacinesis → "<b>Leo Como Papas Di Domingo</b>". El orden importa: la <b>sinapsis</b> arranca en cigoteno, el <b>crossing over</b> ocurre en paquiteno, y los <b>quiasmas</b> se hacen visibles en diploteno.</div>
+  </section>
+
+  <!-- MEIOSIS COMPLETA -->
+  <section class="hoja" id="completa">
+    <span class="num">Tema 3</span>
+    <h2>Meiosis completa: dos divisiones seguidas</h2>
+    <p>Célula <b>2n = 4</b> (par largo y par corto; <span class="naranja">naranja</span> = materno, <span class="azul">azul</span> = paterno). Andá con <b>Siguiente ▶</b>. Prestá atención a <mark>qué se separa en cada anafase</mark>: en la I, homólogos; en la II, hermanas.</p>
+
+    <div class="experimento">
+      <div class="titulo">EXPERIMENTO 2 <span class="tag">2n = 4</span> Meiosis I + II</div>
+      <canvas id="cvmei" class="lienzo" width="680" height="440"></canvas>
+      <div class="panel">
+        <div class="grupo">
+          <button class="tab" id="eprev">◀ Anterior</button>
+          <button class="tab vio" id="enext">Siguiente ▶</button>
+        </div>
+      </div>
+      <div class="marcadores">
+        <div class="marcador"><div class="k">Fase</div><div class="v" id="efase" style="font-size:1rem">Interfase</div></div>
+        <div class="marcador"><div class="k">Células</div><div class="v" id="ecel">1</div></div>
+        <div class="marcador"><div class="k">Cromosomas x célula</div><div class="v" id="ecrom">4</div></div>
+        <div class="marcador violetaM"><div class="k">Ploidía</div><div class="v" id="eploi">2n</div></div>
+      </div>
+      <div class="veredicto" id="mei_v"></div>
+    </div>
+
+    <div class="caja dato"><span class="cab">El truco de las cohesinas</span>En <b>anafase I</b> se sueltan las cohesinas de los <b>brazos</b> pero NO las del <b>centrómero</b> (las protege la proteína <i>shugoshin</i>). Por eso los homólogos se separan pero las hermanas siguen pegadas. Recién en <b>anafase II</b> se cortan las del centrómero y las hermanas se van cada una por su lado.</div>
+  </section>
+
+  <!-- COMPARACIÓN -->
+  <section class="hoja" id="comparacion">
+    <span class="num">Tema 4</span>
+    <h2>Mitosis vs meiosis, frente a frente</h2>
+    <table class="chuleta">
+      <thead><tr><th></th><th>Mitosis</th><th>Meiosis</th></tr></thead>
+      <tbody>
+        <tr><td><b>Divisiones</b></td><td class="si">1</td><td class="no">2 (I y II)</td></tr>
+        <tr><td><b>Células hijas</b></td><td>2</td><td>4</td></tr>
+        <tr><td><b>Ploidía final</b></td><td>2n (igual)</td><td>n (la mitad)</td></tr>
+        <tr><td><b>¿Homólogos se aparean?</b></td><td class="no">No</td><td class="si">Sí (profase I)</td></tr>
+        <tr><td><b>¿Entrecruzamiento?</b></td><td class="no">No</td><td class="si">Sí</td></tr>
+        <tr><td><b>¿Hijas idénticas?</b></td><td class="si">Sí, clones</td><td class="no">No, todas distintas</td></tr>
+        <tr><td><b>Para qué</b></td><td>Crecer, reparar</td><td>Gametos, variabilidad</td></tr>
+      </tbody>
+    </table>
+    <p><b>Meiosis II es casi una mitosis</b>, con dos diferencias finas: el ADN <b>no</b> se replica antes, y las cromátidas hermanas pueden <b>no</b> ser idénticas (si hubo entrecruzamiento). Por eso las 4 células finales son todas distintas.</p>
+    <div class="nota">→ Las dos fuentes de variabilidad de la meiosis: <b>entrecruzamiento</b> (paquiteno) + <b>segregación independiente</b> (metafase I). Sumadas al azar de la fecundación, hacen que seas irrepetible.</div>
+  </section>
+
+  <!-- ERRORES -->
+  <section class="hoja" id="errores">
+    <span class="num">Tema 5</span>
+    <h2>Cuando la separación falla: no disyunción</h2>
+    <p>Si un par de homólogos (en meiosis I) o dos hermanas (en meiosis II) <b>no se separan</b>, un gameto se lleva un cromosoma <b>de más</b> y otro uno <b>de menos</b>. Probá los tres escenarios con un solo par (n = 1 normal):</p>
+
+    <div class="experimento">
+      <div class="titulo">EXPERIMENTO 3 <span class="tag">aneuploidías</span> ¿Qué gametos salen?</div>
+      <canvas id="cvnd" class="lienzo" width="680" height="330"></canvas>
+      <div class="panel">
+        <div class="grupo">
+          <button class="tab go activo" data-nd="0" id="nd0">Normal</button>
+          <button class="tab" data-nd="1" id="nd1">No disyunción en MI</button>
+          <button class="tab" data-nd="2" id="nd2">No disyunción en MII</button>
+        </div>
+      </div>
+      <div class="veredicto" id="nd_v"></div>
+    </div>
+
+    <div class="caja medico"><span class="cab">En humanos</span>Un gameto <b>n+1</b> fecundado da un cigoto <b>2n+1</b> (trisomía). La <b>trisomía del par 21 = Síndrome de Down</b>. Las monosomías (2n−1) casi no son viables: la única compatible con la vida es la del cromosoma <b>X</b> (<b>Síndrome de Turner</b>). Las aneuploidías explican cerca del <b>35% de los abortos espontáneos</b>.</div>
+    <div class="caja dato"><span class="cab">El diagnóstico</span>Se estudia el <b>cariotipo</b>: se ordenan los cromosomas por pares y tamaño. Un tercer cromosoma en el par 21 salta a la vista.</div>
+  </section>
+
+  <!-- APOPTOSIS -->
+  <section class="hoja" id="apoptosis">
+    <span class="num">Tema 6</span>
+    <h2>Morir con estilo: apoptosis vs necrosis</h2>
+    <p>Que un organismo crezca sano depende tanto de <b>producir</b> células como de <b>eliminarlas</b> a tiempo. Hay dos formas de morir, y son opuestas:</p>
+    <table class="chuleta">
+      <thead><tr><th></th><th class="si">Apoptosis</th><th class="no">Necrosis</th></tr></thead>
+      <tbody>
+        <tr><td><b>Tipo</b></td><td>Programada, "suicidio" ordenado</td><td>Patológica, accidental</td></tr>
+        <tr><td><b>Disparador</b></td><td>Señal genética (ADN dañado, desarrollo)</td><td>Daño externo (toxinas, falta de O₂, trauma)</td></tr>
+        <tr><td><b>La célula…</b></td><td>Se encoge, fragmenta su cromatina, forma <b>cuerpos apoptóticos</b></td><td>Se <b>hincha</b> y se <b>lisa</b>, derrama su contenido</td></tr>
+        <tr><td><b>¿Inflamación?</b></td><td class="si">No: los macrófagos la comen limpio</td><td class="no">Sí: inflama el tejido vecino</td></tr>
+      </tbody>
+    </table>
+    <div class="caja evolutivo"><span class="cab">Apoptosis que te formó</span>Tu mano empezó como una "paleta": la apoptosis <b>talló los dedos</b> eliminando las células de entre medio. En el renacuajo, la apoptosis <b>reabsorbe la cola</b> cuando se hace rana. Y elimina células con ADN dañado antes de que se vuelvan cancerosas: si una célula dañada <b>no</b> puede apoptar, puede ir camino al cáncer.</div>
+    <div class="caja dato"><span class="cab">Y en procariotas, ¿hay recombinación?</span>Sí, pero sin meiosis. Los procariotas mezclan genes por <b>transformación</b> (toman ADN del medio), <b>conjugación</b> (lo pasan por contacto vía pili) y <b>transducción</b> (un virus lo transporta).</div>
+  </section>
+
+  <!-- CHULETA + QUIZ -->
+  <section class="hoja" id="chuleta">
+    <span class="num">Cierre</span>
+    <h2>Chuleta + mini examen</h2>
+    <table class="chuleta">
+      <thead><tr><th>Si te preguntan…</th><th>La respuesta corta</th></tr></thead>
+      <tbody>
+        <tr><td>¿Dónde se reduce 2n → n?</td><td>En anafase I, al separarse los homólogos</td></tr>
+        <tr><td>¿Dónde ocurre el crossing over?</td><td>En paquiteno (profase I), entre cromátidas no hermanas</td></tr>
+        <tr><td>¿Qué es un quiasma?</td><td>El punto en X donde se ve el entrecruzamiento</td></tr>
+        <tr><td>Dos fuentes de variabilidad</td><td>Entrecruzamiento + segregación independiente</td></tr>
+        <tr><td>Trisomía 21</td><td>Síndrome de Down (no disyunción del par 21)</td></tr>
+        <tr><td>Muerte limpia sin inflamar</td><td>Apoptosis (programada)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Mini examen (sin nota, tranqui)</h3>
+
+    <div class="pregunta">
+      <p class="q">1. La reducción de diploide a haploide (2n → n) ocurre en…</p>
+      <button class="opcion" data-q="1" data-ok="0">Anafase I, cuando se separan los homólogos</button>
+      <button class="opcion" data-q="1" data-ok="">Anafase II, cuando se separan las hermanas</button>
+      <button class="opcion" data-q="1" data-ok="">La interfase, al replicarse el ADN</button>
+      <div class="feedback" id="f1"></div>
+    </div>
+
+    <div class="pregunta">
+      <p class="q">2. El entrecruzamiento (crossing over) es un intercambio entre…</p>
+      <button class="opcion" data-q="2" data-ok="">Cromátidas hermanas del mismo cromosoma</button>
+      <button class="opcion" data-q="2" data-ok="0">Cromátidas no hermanas de cromosomas homólogos</button>
+      <button class="opcion" data-q="2" data-ok="">Dos células hijas distintas</button>
+      <div class="feedback" id="f2"></div>
+    </div>
+
+    <div class="pregunta">
+      <p class="q">3. Un gameto con un cromosoma de más (n+1) fecundado por uno normal produce…</p>
+      <button class="opcion" data-q="3" data-ok="">Una monosomía (2n−1)</button>
+      <button class="opcion" data-q="3" data-ok="0">Una trisomía (2n+1), como el Síndrome de Down si es el par 21</button>
+      <button class="opcion" data-q="3" data-ok="">Una célula haploide normal</button>
+      <div class="feedback" id="f3"></div>
+    </div>
+
+    <div class="pregunta">
+      <p class="q">4. ¿Qué diferencia clave tiene la meiosis II respecto de la mitosis?</p>
+      <button class="opcion" data-q="4" data-ok="0">Antes de la meiosis II el ADN NO se replica</button>
+      <button class="opcion" data-q="4" data-ok="">En meiosis II se aparean los homólogos</button>
+      <button class="opcion" data-q="4" data-ok="">La meiosis II produce células diploides</button>
+      <div class="feedback" id="f4"></div>
+    </div>
+
+    <div class="pregunta">
+      <p class="q">5. Una célula muere hinchándose y derramando su contenido, e inflama el tejido vecino. Es…</p>
+      <button class="opcion" data-q="5" data-ok="">Apoptosis</button>
+      <button class="opcion" data-q="5" data-ok="0">Necrosis</button>
+      <button class="opcion" data-q="5" data-ok="">Meiosis</button>
+      <div class="feedback" id="f5"></div>
+    </div>
+
+    <p class="cierre">Fin de la carpeta. Ahora sí: andá y rompela!</p>
+    <p class="cierre chico">Volvé al <a class="link" href="index.html">índice</a> cuando quieras.</p>
+  </section>
+
+</div>
+<script src="comun.js"></script>
+<script>
+window.EXPLICA = {
+  "1":"La reducción es en anafase I: se separan los homólogos (uno a cada polo), pasando de 2n a n. En anafase II se separan hermanas, pero la ploidía ya era n.",
+  "2":"El crossing over intercambia segmentos entre cromátidas NO hermanas de homólogos. Entre hermanas (idénticas) no aportaría variabilidad.",
+  "3":"n+1 fecundado por n normal = 2n+1 (trisomía). En el par 21 es el Síndrome de Down.",
+  "4":"Meiosis II es como una mitosis pero SIN replicación previa del ADN, y las hermanas pueden diferir por el entrecruzamiento.",
+  "5":"Hinchazón + lisis + inflamación = necrosis (muerte patológica desordenada). La apoptosis es ordenada y no inflama."
+};
+
+/* ============ EXP 1: profase I subetapas ============ */
+(function(){
+  const cv=$("cvpro"); if(!cv) return;
+  const {ctx,W,H}=setupCanvas(cv);
+  const cx=W/2, cy=H/2;
+  const MAT="#E4572E", PAT="#3A6EA5";
+  let sel=0;
+  const txt=[
+    "<b>Leptoteno.</b> Los cromosomas (ya replicados en la interfase) empiezan a condensarse y se ven como filamentos largos y delgados. Los homólogos todavía están separados.",
+    "<b>Cigoteno.</b> Empieza la <b>sinapsis</b>: los homólogos se aparean punto a punto, arrancando por los telómeros, y se forma el <b>complejo sinaptonémico</b> (la cremallera proteica entre ellos).",
+    "<b>Paquiteno.</b> Sinapsis completa: es una <b>tétrada</b> (4 cromátidas). Ocurre el <b>entrecruzamiento</b>: cromátidas no hermanas intercambian segmentos. Mirá el tramo de color cambiado.",
+    "<b>Diploteno.</b> El complejo sinaptonémico se disuelve y los homólogos se separan un poco, pero quedan enganchados en los <b>quiasmas</b> (las X). Ahí se ve el resultado del entrecruzamiento.",
+    "<b>Diacinesis.</b> Máxima condensación. Los quiasmas se deslizan hacia los extremos (terminalización). La envoltura nuclear desaparece: lista para la metafase I."
+  ];
+  function capsula(x,y,largo,ang,color,tip){
+    const gr=10, hx=Math.cos(ang)*(largo/2-gr/2), hy=Math.sin(ang)*(largo/2-gr/2);
+    ctx.strokeStyle=color; ctx.lineWidth=gr; ctx.lineCap="round";
+    ctx.beginPath(); ctx.moveTo(x-hx,y-hy); ctx.lineTo(x+hx,y+hy); ctx.stroke();
+    if(tip){ ctx.strokeStyle=tip; ctx.beginPath(); ctx.moveTo(x+hx*0.5,y+hy*0.5); ctx.lineTo(x+hx,y+hy); ctx.stroke(); }
+    ctx.lineCap="butt";
+  }
+  function homologo(y,color,tip){ // duplicado horizontal (2 hermanas)
+    capsula(cx,y-6,150,0,color,tip); capsula(cx,y+6,150,0,color,tip);
+    ctx.fillStyle="#2b2b2b"; ctx.beginPath(); ctx.arc(cx,y-6,3,0,7); ctx.fill(); ctx.beginPath(); ctx.arc(cx,y+6,3,0,7); ctx.fill();
+  }
+  function cremallera(y0,y1){ ctx.strokeStyle="rgba(122,62,157,.7)"; ctx.lineWidth=1.5;
+    for(let x=cx-70;x<=cx+70;x+=10){ ctx.beginPath(); ctx.moveTo(x,y0); ctx.lineTo(x,y1); ctx.stroke(); } }
+  function dibujar(){
+    ctx.clearRect(0,0,W,H);
+    if(sel===0){ // leptoteno: separados, finos
+      ctx.lineWidth=3;
+      homologoFino(cy-40,MAT); homologoFino(cy+40,PAT);
+      etiqueta(ctx,"homólogos separados",cx-70,cy-70,"rgba(28,93,76,.6)",13);
+    } else if(sel===1){ // cigoteno: acercándose, cremallera parcial
+      homologo(cy-16,MAT); homologo(cy+16,PAT);
+      cremallera(cy-10,cy+10);
+      etiqueta(ctx,"complejo sinaptonémico (se arma)",cx-100,cy-52,VIOLETA,12);
+    } else if(sel===2){ // paquiteno: tétrada + crossing over
+      homologo(cy-14,MAT,PAT); homologo(cy+14,PAT,MAT);
+      cremallera(cy-8,cy+8);
+      etiqueta(ctx,"tétrada · entrecruzamiento",cx-90,cy-50,VIOLETA,13);
+      etiqueta(ctx,"✂ segmentos cambiados",cx+30,cy+54,VIOLETA,12);
+    } else if(sel===3){ // diploteno: separan, quiasma
+      homologo(cy-26,MAT,PAT); homologo(cy+26,PAT,MAT);
+      // quiasma: cruce en el centro
+      ctx.strokeStyle=VIOLETA; ctx.lineWidth=2;
+      ctx.beginPath(); ctx.moveTo(cx-4,cy-20); ctx.lineTo(cx+4,cy+20); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(cx+4,cy-20); ctx.lineTo(cx-4,cy+20); ctx.stroke();
+      etiqueta(ctx,"quiasma (X)",cx+20,cy,VIOLETA,13);
+    } else { // diacinesis: condensado, quiasma terminal
+      homologo(cy-30,MAT,PAT); homologo(cy+30,PAT,MAT);
+      ctx.strokeStyle=VIOLETA; ctx.lineWidth=2;
+      ctx.beginPath(); ctx.moveTo(cx+66,cy-24); ctx.lineTo(cx+74,cy+24); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(cx+74,cy-24); ctx.lineTo(cx+66,cy+24); ctx.stroke();
+      etiqueta(ctx,"quiasma terminalizado →",cx-60,cy-52,VIOLETA,12);
+    }
+    $("pro_v").innerHTML=txt[sel];
+  }
+  function homologoFino(y,color){
+    ctx.strokeStyle=color; ctx.lineWidth=3.5; ctx.lineCap="round"; ctx.beginPath();
+    for(let i=0;i<=40;i++){ const x=cx-140+i*7; const yy=y+Math.sin(i*0.6)*5; i?ctx.lineTo(x,yy):ctx.moveTo(x,yy);} ctx.stroke(); ctx.lineCap="butt";
+  }
+  ["pr0","pr1","pr2","pr3","pr4"].forEach(function(id,i){
+    $(id).addEventListener("click",function(){
+      sel=i;
+      document.querySelectorAll("#profase1 [data-p]").forEach(function(b){b.classList.remove("activo");});
+      $(id).classList.add("activo"); dibujar();
+    });
+  });
+  dibujar();
+})();
+
+/* ============ EXP 2: meiosis completa ============ */
+(function(){
+  const cv=$("cvmei"); if(!cv) return;
+  const {ctx,W,H}=setupCanvas(cv);
+  const MAT="#E4572E", PAT="#3A6EA5", LG=66, SM=44;
+  function membrana(cx,cy,rx,ry){ ctx.fillStyle="rgba(150,200,175,.14)"; ctx.strokeStyle="rgba(28,93,76,.55)"; ctx.lineWidth=2.5;
+    ctx.beginPath(); ctx.ellipse(cx,cy,rx,ry,0,0,7); ctx.fill(); ctx.stroke(); }
+  function placaV(cx,y0,y1){ ctx.strokeStyle="rgba(28,93,76,.4)"; ctx.lineWidth=1.5; ctx.setLineDash([5,5]);
+    ctx.beginPath(); ctx.moveTo(cx,y0); ctx.lineTo(cx,y1); ctx.stroke(); ctx.setLineDash([]); }
+  function placaH(cy,x0,x1){ ctx.strokeStyle="rgba(28,93,76,.4)"; ctx.lineWidth=1.5; ctx.setLineDash([5,5]);
+    ctx.beginPath(); ctx.moveTo(x0,cy); ctx.lineTo(x1,cy); ctx.stroke(); ctx.setLineDash([]); }
+  function capsula(cx,cy,largo,ang,color,tip){
+    const gr=9, hx=Math.cos(ang)*(largo/2-gr/2), hy=Math.sin(ang)*(largo/2-gr/2);
+    ctx.strokeStyle=color; ctx.lineWidth=gr; ctx.lineCap="round";
+    ctx.beginPath(); ctx.moveTo(cx-hx,cy-hy); ctx.lineTo(cx+hx,cy+hy); ctx.stroke();
+    if(tip){ ctx.strokeStyle=tip; ctx.beginPath(); ctx.moveTo(cx+hx*0.45,cy+hy*0.45); ctx.lineTo(cx+hx,cy+hy); ctx.stroke(); }
+    ctx.lineCap="butt";
+  }
+  function dup(cx,cy,largo,ang,color,tips){
+    const off=6, px=Math.cos(ang+Math.PI/2), py=Math.sin(ang+Math.PI/2);
+    capsula(cx+px*off,cy+py*off,largo,ang,color,tips?tips[0]:null);
+    capsula(cx-px*off,cy-py*off,largo,ang,color,tips?tips[1]:null);
+    ctx.fillStyle="#2b2b2b"; ctx.beginPath(); ctx.arc(cx,cy,3.5,0,7); ctx.fill();
+  }
+  function single(cx,cy,largo,ang,color,tip){ capsula(cx,cy,largo,ang,color,tip); ctx.fillStyle="#2b2b2b"; ctx.beginPath(); ctx.arc(cx,cy,3.5,0,7); ctx.fill(); }
+  function hilo(cx,cy,largo,color){ ctx.strokeStyle=color; ctx.lineWidth=3; ctx.lineCap="round"; ctx.beginPath();
+    for(let i=0;i<=20;i++){ const x=cx-largo/2+largo*i/20, y=cy+Math.sin(i*0.9)*8; i?ctx.lineTo(x,y):ctx.moveTo(x,y);} ctx.stroke(); ctx.lineCap="butt"; }
+
+  function interfase(){ membrana(340,220,150,150);
+    ctx.strokeStyle="rgba(28,93,76,.4)"; ctx.lineWidth=2; ctx.setLineDash([6,5]);
+    ctx.beginPath(); ctx.ellipse(340,220,95,92,0,0,7); ctx.stroke(); ctx.setLineDash([]);
+    hilo(315,185,80,MAT); hilo(365,215,80,PAT); hilo(320,255,54,MAT); hilo(365,278,54,PAT); }
+
+  const fases=[
+    {tag:"Interfase",cel:"1",crom:"4",ploi:"2n",cap:"Interfase: se copia el ADN. Cada cromosoma queda con 2 cromátidas hermanas. Empezamos con 2n = 4.",draw:interfase},
+    {tag:"Profase I",cel:"1",crom:"4",ploi:"2n",cap:"<b>Profase I:</b> los homólogos se aparean (sinapsis) formando tétradas y hacen <b>entrecruzamiento</b> (mirá las puntas de color cambiado). Acá nace la variabilidad.",
+     draw:function(){ membrana(340,220,150,150);
+       dup(305,155,LG,0,MAT,[null,PAT]); dup(305,178,LG,0,PAT,[MAT,null]);
+       etiqueta(ctx,"tétrada (par largo)",235,125,"rgba(28,93,76,.7)",12);
+       dup(360,285,SM,0,PAT); dup(360,305,SM,0,MAT);
+       etiqueta(ctx,"✂ crossing over",400,168,VIOLETA,13); }},
+    {tag:"Metafase I",cel:"1",crom:"4",ploi:"2n",cap:"<b>Metafase I:</b> los pares se alinean sobre la placa. La orientación de cada par es al azar → <b>segregación independiente</b>.",
+     draw:function(){ membrana(340,220,150,150); placaV(340,110,330);
+       dup(300,155,LG,0,MAT,[null,PAT]); dup(380,155,LG,0,PAT,[MAT,null]);
+       dup(305,300,SM,0,PAT); dup(375,300,SM,0,MAT);
+       etiqueta(ctx,"orientación al azar",250,240,VIOLETA,12); }},
+    {tag:"Anafase I",cel:"1",crom:"4",ploi:"2n→n",cap:"<b>Anafase I:</b> se separan los <b>homólogos</b> (¡no las hermanas!). Cada polo recibe la mitad. Acá 2n baja a n: la división reduccional.",
+     draw:function(){ membrana(340,220,160,150);
+       dup(190,160,LG,Math.PI/2,MAT,[null,PAT]); dup(190,300,SM,Math.PI/2,PAT);
+       dup(495,160,LG,Math.PI/2,PAT,[MAT,null]); dup(495,300,SM,Math.PI/2,MAT);
+       flecha(ctx,250,220,205,220,"rgba(28,93,76,.5)",2.5); flecha(ctx,430,220,475,220,"rgba(28,93,76,.5)",2.5);
+       etiqueta(ctx,"hermanas siguen unidas (centrómero)",230,405,"rgba(28,93,76,.6)",12); }},
+    {tag:"Telofase I",cel:"2",crom:"2",ploi:"n",cap:"<b>Telofase I:</b> dos células haploides (n = 2). Los cromosomas todavía tienen 2 cromátidas y NO se replica el ADN antes de seguir.",
+     draw:function(){ membrana(185,220,118,140); membrana(495,220,118,140);
+       dup(185,175,LG,0,MAT,[null,PAT]); dup(185,270,SM,0,PAT);
+       dup(495,175,LG,0,PAT,[MAT,null]); dup(495,270,SM,0,MAT); }},
+    {tag:"Metafase II",cel:"2",crom:"2",ploi:"n",cap:"<b>Metafase II</b> (como una mitosis en cada célula): los cromosomas se alinean sobre la placa de cada una.",
+     draw:function(){ membrana(185,220,118,140); membrana(495,220,118,140);
+       placaH(220,90,280); placaH(220,400,590);
+       dup(150,220,LG,Math.PI/2,MAT,[null,PAT]); dup(230,220,SM,Math.PI/2,PAT);
+       dup(460,220,LG,Math.PI/2,PAT,[MAT,null]); dup(540,220,SM,Math.PI/2,MAT); }},
+    {tag:"Anafase II",cel:"2",crom:"4",ploi:"n",cap:"<b>Anafase II:</b> ahora sí se separan las cromátidas hermanas, hacia arriba y abajo en cada célula.",
+     draw:function(){ membrana(185,220,118,150); membrana(495,220,118,150);
+       single(150,155,LG,Math.PI/2,MAT,PAT); single(230,155,SM,Math.PI/2,PAT);
+       single(150,290,LG,Math.PI/2,MAT); single(230,290,SM,Math.PI/2,PAT);
+       single(460,155,LG,Math.PI/2,PAT,MAT); single(540,155,SM,Math.PI/2,MAT);
+       single(460,290,LG,Math.PI/2,PAT); single(540,290,SM,Math.PI/2,MAT); }},
+    {tag:"Telofase II",cel:"4",crom:"2",ploi:"n",cap:"<b>Resultado:</b> 4 células haploides (n = 2), TODAS distintas entre sí (por entrecruzamiento + segregación independiente). Son los gametos.",
+     draw:function(){ membrana(180,118,92,90); membrana(180,322,92,90); membrana(500,118,92,90); membrana(500,322,92,90);
+       single(158,118,LG,0,MAT,PAT); single(158,150,SM,0,PAT);
+       single(158,322,LG,0,MAT); single(158,354,SM,0,PAT);
+       single(478,118,LG,0,PAT,MAT); single(478,150,SM,0,MAT);
+       single(478,322,LG,0,PAT); single(478,354,SM,0,MAT);
+       etiqueta(ctx,"todas diferentes",250,225,VIOLETA,14); }}
+  ];
+  let i=0;
+  function render(){
+    ctx.clearRect(0,0,W,H); const f=fases[i]; f.draw();
+    $("efase").textContent=f.tag; $("ecel").textContent=f.cel; $("ecrom").textContent=f.crom; $("eploi").textContent=f.ploi;
+    $("eploi").style.color=(f.ploi==="n")?VIOLETA:(f.ploi.indexOf("→")>=0?COL.rojo:COL.tinta);
+    $("mei_v").innerHTML=f.cap;
+    $("eprev").disabled=(i<=0); $("enext").disabled=(i>=fases.length-1);
+    $("eprev").style.opacity=$("eprev").disabled?.4:1; $("enext").style.opacity=$("enext").disabled?.4:1;
+  }
+  $("enext").addEventListener("click",function(){ if(i<fases.length-1){i++;render();} });
+  $("eprev").addEventListener("click",function(){ if(i>0){i--;render();} });
+  render();
+})();
+
+/* ============ EXP 3: no disyunción ============ */
+(function(){
+  const cv=$("cvnd"); if(!cv) return;
+  const {ctx,W,H}=setupCanvas(cv);
+  const MAT="#E4572E", PAT="#3A6EA5";
+  let modo=0;
+  function crom(x,y,color){ ctx.strokeStyle=color; ctx.lineWidth=9; ctx.lineCap="round";
+    ctx.beginPath(); ctx.moveTo(x,y-16); ctx.lineTo(x,y+16); ctx.stroke(); ctx.lineCap="butt";
+    ctx.fillStyle="#2b2b2b"; ctx.beginPath(); ctx.arc(x,y,3,0,7); ctx.fill(); }
+  function gameto(x,cromos,etq,tipo){
+    ctx.fillStyle="rgba(150,200,175,.14)"; ctx.strokeStyle="rgba(28,93,76,.5)"; ctx.lineWidth=2;
+    ctx.beginPath(); ctx.arc(x,250,46,0,7); ctx.fill(); ctx.stroke();
+    cromos.forEach(function(c,k){ crom(x-10+k*20,250,c); });
+    const col = tipo==="ok"?COL.verde:COL.rojo;
+    etiqueta(ctx,etq,x-18,312,col,14,800);
+  }
+  function dibujar(){
+    ctx.clearRect(0,0,W,H);
+    // célula madre arriba
+    ctx.fillStyle="rgba(150,200,175,.14)"; ctx.strokeStyle="rgba(28,93,76,.5)"; ctx.lineWidth=2.5;
+    ctx.beginPath(); ctx.ellipse(W/2,70,70,44,0,0,7); ctx.fill(); ctx.stroke();
+    crom(W/2-16,70,MAT); crom(W/2+16,70,PAT);
+    etiqueta(ctx,"célula germinal 2n=2 (1 par)",W/2-90,26,"rgba(28,93,76,.7)",13);
+    // flechas
+    ctx.strokeStyle="rgba(28,93,76,.4)"; ctx.setLineDash([4,4]); ctx.lineWidth=1.5;
+    [140,300,460,620].forEach(function(x){ ctx.beginPath(); ctx.moveTo(W/2,110); ctx.lineTo(x,205); ctx.stroke(); });
+    ctx.setLineDash([]);
+    if(modo===0){ // normal: 4 gametos n=1
+      gameto(140,[MAT],"n ✓","ok"); gameto(300,[MAT],"n ✓","ok");
+      gameto(460,[PAT],"n ✓","ok"); gameto(620,[PAT],"n ✓","ok");
+      $("nd_v").innerHTML="<b>Normal.</b> En MI se separan los homólogos, en MII las hermanas. Resultado: 4 gametos haploides equilibrados (n). Todo bien.";
+    } else if(modo===1){ // no disyunción MI: 2 gametos n+1, 2 gametos n-1
+      gameto(140,[MAT,PAT],"n+1","mal"); gameto(300,[MAT,PAT],"n+1","mal");
+      gameto(460,[],"n−1","mal"); gameto(620,[],"n−1","mal");
+      $("nd_v").innerHTML="<b>No disyunción en Meiosis I.</b> El par de homólogos no se separó: los DOS fueron a la misma célula. Los 4 gametos quedan desbalanceados: dos con <b>n+1</b> y dos con <b>n−1</b>.";
+    } else { // no disyunción MII: 1 n+1, 1 n-1, 2 normales
+      gameto(140,[MAT],"n ✓","ok"); gameto(300,[MAT,MAT] ,"n+1","mal");
+      gameto(460,[],"n−1","mal"); gameto(620,[PAT],"n ✓","ok");
+      $("nd_v").innerHTML="<b>No disyunción en Meiosis II.</b> MI salió bien, pero en una de las dos células las cromátidas hermanas no se separaron. Esa célula da un gameto <b>n+1</b> y uno <b>n−1</b>; la otra da dos normales.";
+    }
+  }
+  ["nd0","nd1","nd2"].forEach(function(id,i){
+    $(id).addEventListener("click",function(){
+      modo=i;
+      document.querySelectorAll("#errores [data-nd]").forEach(function(b){b.classList.remove("activo");});
+      $(id).classList.add("activo"); dibujar();
+    });
+  });
+  dibujar();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>04 · El desafío: ejercicios integradores</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<nav class="navbar">
+  <a class="inicio" href="index.html">← Carpeta</a>
+  <a href="protozoos.html">Protozoos</a>
+  <a href="ciclo-mitosis.html">Ciclo · Mitosis</a>
+  <a href="meiosis.html">Meiosis</a>
+  <a class="actual" href="ejercicios.html">Ejercicios</a>
+</nav>
+<div class="carpeta">
+
+  <header class="caratula">
+    <div class="materia">Cuaderno 04 · El desafío</div>
+    <h1>Ejercicios que te hacen pensar</h1>
+    <p class="sub">Nada de responder de memoria: estos mezclan los tres temas a propósito. Intentá resolverlos vos primero (en serio, tapá la solución) y recién después destapá. Equivocarse acá es gratis.</p>
+  </header>
+
+  <section class="hoja">
+    <span class="num">Antes de empezar</span>
+    <h2>Cómo aprovecharlos</h2>
+    <ul>
+      <li>Cada ejercicio dice qué temas cruza con etiquetas: <span class="ej-tag p" style="display:inline-block">protozoos</span> <span class="ej-tag m" style="display:inline-block">ciclo/mitosis</span> <span class="ej-tag me" style="display:inline-block">meiosis</span>.</li>
+      <li>Los que tienen <b>"Ver resolución"</b>: escribí (o pensá) tu respuesta completa <b>antes</b> de destapar. Si mirás primero, no cuenta 😉.</li>
+      <li>Los interactivos (completar tablas, ordenar) se corrigen solos con el botón verde.</li>
+    </ul>
+  </section>
+
+  <!-- EJ 1: tabla contar -->
+  <section class="hoja">
+    <div class="ejercicio">
+      <div class="ej-cab"><span class="ej-num">1</span><b>Contar sin marearse</b><span class="ej-tags"><span class="ej-tag m">ciclo/mitosis</span><span class="ej-tag me">meiosis</span></span></div>
+      <p class="enun">En un humano (<b>2n = 46</b>), completá para cada momento: número de cromosomas, número de cromátidas y contenido de ADN (en <b>C</b>, donde 1C = ADN de un juego haploide). Escribí solo el número.</p>
+      <table class="tabla-ej" id="tabla1">
+        <thead><tr><th>Momento</th><th>N° cromosomas</th><th>N° cromátidas</th><th>ADN (C)</th></tr></thead>
+        <tbody>
+          <tr><td class="et">G1 (antes de replicar)</td><td><input data-ok="46"></td><td><input data-ok="46"></td><td><input data-ok="2"></td></tr>
+          <tr><td class="et">Fin de S / G2</td><td><input data-ok="46"></td><td><input data-ok="92"></td><td><input data-ok="4"></td></tr>
+          <tr><td class="et">Metafase I (meiosis)</td><td><input data-ok="46"></td><td><input data-ok="92"></td><td><input data-ok="4"></td></tr>
+          <tr><td class="et">Metafase II (meiosis)</td><td><input data-ok="23"></td><td><input data-ok="46"></td><td><input data-ok="2"></td></tr>
+          <tr><td class="et">Gameto (fin meiosis II)</td><td><input data-ok="23"></td><td><input data-ok="23"></td><td><input data-ok="1"></td></tr>
+        </tbody>
+      </table>
+      <button class="btn-check" data-tabla="tabla1" data-msg="msg1">Comprobar</button>
+      <div class="res-msg" id="msg1"></div>
+      <button class="btn-sol">Ver la lógica</button>
+      <div class="solucion">
+        <b>La clave:</b> el número de <b>cromosomas</b> se cuenta por <b>centrómeros</b> y solo cambia cuando algo se separa; las <b>cromátidas</b> se duplican en S; el <b>ADN (C)</b> sigue a las cromátidas.
+        <ul>
+          <li><b>G1:</b> 46 crom, 46 cromátidas (1 c/u), 2C. Punto de partida.</li>
+          <li><b>Fin de S:</b> se duplicó el ADN → siguen 46 crom (mismos centrómeros) pero 92 cromátidas, 4C.</li>
+          <li><b>Metafase I:</b> igual que G2, porque meiosis I todavía no separó nada: 46 crom, 92 cromátidas, 4C.</li>
+          <li><b>Metafase II:</b> ya se separaron los homólogos en anafase I (2n→n) → 23 crom, cada uno con 2 cromátidas = 46 cromátidas, 2C.</li>
+          <li><b>Gameto:</b> anafase II separó las hermanas → 23 crom, 23 cromátidas, 1C. Haploide puro.</li>
+        </ul>
+        Ojo con la trampa clásica: <b>metafase I tiene el mismo conteo que G2</b>. La reducción recién ocurre en anafase I.
+      </div>
+    </div>
+  </section>
+
+  <!-- EJ 2 -->
+  <section class="hoja">
+    <div class="ejercicio">
+      <div class="ej-cab"><span class="ej-num">2</span><b>El compañero apurado</b><span class="ej-tags"><span class="ej-tag p">protozoos</span><span class="ej-tag me">meiosis</span></span></div>
+      <p class="enun"><i class="sp">Trichomonas vaginalis</i> se reproduce por <b>fisión binaria longitudinal</b>. Un compañero dice: <i>"como es un eucariota, entonces hace meiosis para reproducirse"</i>. ¿Tiene razón? Justificá con dos argumentos.</p>
+      <button class="btn-sol">Ver resolución</button>
+      <div class="solucion">
+        <b>No tiene razón.</b>
+        <ul>
+          <li><b>Meiosis ≠ reproducción.</b> La meiosis sirve para hacer <b>gametos</b> en la reproducción <b>sexual</b>, y produce 4 células <b>haploides distintas</b>. <i class="sp">Trichomonas</i> se multiplica de forma <b>asexual</b> por fisión binaria: una división tipo <b>mitosis</b> que da <b>2 células idénticas</b>.</li>
+          <li><b>Ploidía.</b> Muchos flagelados viven como haploides. No podés "reducir a la mitad" algo que ya es n, y tampoco necesita aparear homólogos.</li>
+        </ul>
+        Que sea eucariota le da la maquinaria (huso, cromosomas), pero <b>usar meiosis es una decisión del ciclo de vida</b>, no una obligación por tener núcleo.
+      </div>
+    </div>
+  </section>
+
+  <!-- EJ 3 -->
+  <section class="hoja">
+    <div class="ejercicio">
+      <div class="ej-cab"><span class="ej-num">3</span><b>La célula misteriosa</b><span class="ej-tags"><span class="ej-tag p">protozoos</span><span class="ej-tag m">ciclo/mitosis</span><span class="ej-tag me">meiosis</span></span></div>
+      <p class="enun">Observás una célula que tiene <b>hidrogenosomas</b> (no mitocondrias típicas) y, al dividirse, produce <b>2 células idénticas</b>. Respondé:<br>
+      (a) ¿A qué grupo de protozoos podría pertenecer?<br>
+      (b) ¿Qué tipo de división hizo?<br>
+      (c) Si en cambio fuera una célula germinal humana en meiosis, ¿cuántas células saldrían y con qué ploidía?</p>
+      <button class="btn-sol">Ver resolución</button>
+      <div class="solucion">
+        <b>(a)</b> El hidrogenosoma es la marca de los <b>parabasálidos</b> (ej. <i class="sp">Trichomonas</i>): flagelados anaerobios que reemplazaron la mitocondria.<br>
+        <b>(b)</b> Dos células idénticas = <b>fisión binaria</b>, una división <b>mitótica</b> (asexual).<br>
+        <b>(c)</b> La meiosis daría <b>4 células</b> haploides (<b>n</b>), y <b>distintas</b> entre sí por entrecruzamiento y segregación independiente. La diferencia con (b) es total: mitosis = 2 iguales 2n; meiosis = 4 distintas n.
+      </div>
+    </div>
+  </section>
+
+  <!-- EJ 4 -->
+  <section class="hoja">
+    <div class="ejercicio">
+      <div class="ej-cab"><span class="ej-num">4</span><b>Freno de emergencia</b><span class="ej-tags"><span class="ej-tag m">ciclo/mitosis</span><span class="ej-tag me">apoptosis</span></span></div>
+      <p class="enun">Una célula sufre un daño en su ADN durante <b>G1</b>.<br>
+      (a) ¿Qué punto de control debería frenarla?<br>
+      (b) Si el daño es irreparable, ¿qué mecanismo la elimina y por qué se dice que es "limpio"?<br>
+      (c) ¿Qué puede pasar si ese mecanismo falla?</p>
+      <button class="btn-sol">Ver resolución</button>
+      <div class="solucion">
+        <b>(a)</b> El <b>checkpoint G1/S</b>: no deja entrar a la fase S si el ADN está dañado (evita copiar el error).<br>
+        <b>(b)</b> La <b>apoptosis</b> (muerte programada): la célula se encoge, fragmenta su cromatina y forma cuerpos apoptóticos que los macrófagos se comen. Es "limpio" porque <b>no genera inflamación</b> (a diferencia de la necrosis, que lisa y derrama).<br>
+        <b>(c)</b> Si la célula con ADN dañado <b>no apopta</b> y sigue dividiéndose, acumula mutaciones: es el camino hacia el <b>cáncer</b>.
+      </div>
+    </div>
+  </section>
+
+  <!-- EJ 5 -->
+  <section class="hoja">
+    <div class="ejercicio">
+      <div class="ej-cab"><span class="ej-num">5</span><b>Cuentas de meiosis</b><span class="ej-tags"><span class="ej-tag me">meiosis</span></span></div>
+      <p class="enun">Un organismo tiene <b>2n = 8</b>.<br>
+      (a) ¿Cuántos bivalentes (tétradas) se forman en metafase I?<br>
+      (b) ¿Cuántas combinaciones distintas de gametos genera la segregación independiente (sin contar entrecruzamiento)?<br>
+      (c) ¿Cuántas cromátidas hay en una célula en metafase I?</p>
+      <button class="btn-sol">Ver resolución</button>
+      <div class="solucion">
+        <b>(a)</b> n = 4 pares de homólogos → <b>4 bivalentes</b>.<br>
+        <b>(b)</b> Cada par se orienta al azar de 2 formas → <b>2ⁿ = 2⁴ = 16</b> combinaciones posibles.<br>
+        <b>(c)</b> En metafase I el ADN ya está replicado y nada se separó: 8 cromosomas × 2 cromátidas = <b>16 cromátidas</b>.<br>
+        <span style="color:var(--tinta-suave)">Dato de escala: en humanos (n=23) son 2²³ ≈ <b>8,4 millones</b> de combinaciones… y eso sin sumar el entrecruzamiento.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EJ 6: ordenar -->
+  <section class="hoja">
+    <div class="ejercicio">
+      <div class="ej-cab"><span class="ej-num">6</span><b>Ordená la profase I</b><span class="ej-tags"><span class="ej-tag me">meiosis</span></span></div>
+      <p class="enun">Clickeá las 5 subetapas de la profase I <b>en orden</b>. (Pista: la sinapsis arranca en la segunda, y el crossing over está en la del medio.)</p>
+      <div class="ordenar" id="ord1" data-correcto="leptoteno,cigoteno,paquiteno,diploteno,diacinesis">
+        <div class="chips">
+          <button class="chip" data-v="diploteno">Diploteno</button>
+          <button class="chip" data-v="leptoteno">Leptoteno</button>
+          <button class="chip" data-v="diacinesis">Diacinesis</button>
+          <button class="chip" data-v="paquiteno">Paquiteno</button>
+          <button class="chip" data-v="cigoteno">Cigoteno</button>
+        </div>
+        <div class="secuencia"></div>
+        <button class="btn-orden">Comprobar orden</button>
+        <div class="orden-res"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EJ 7: encontrá el error -->
+  <section class="hoja">
+    <div class="ejercicio">
+      <div class="ej-cab"><span class="ej-num">7</span><b>Encontrá los errores</b><span class="ej-tags"><span class="ej-tag m">ciclo/mitosis</span><span class="ej-tag me">meiosis</span></span></div>
+      <p class="enun">El siguiente párrafo tiene <b>4 errores</b>. Encontralos antes de destapar:</p>
+      <p style="background:#FBEEEC;border-left:4px solid var(--rojo);padding:10px 14px;border-radius:8px;font-style:italic">
+      "Una célula germinal humana (2n=46) entra en meiosis. En la profase I, las <b>cromátidas hermanas</b> se aparean y hacen crossing over. En la anafase I se separan las <b>cromátidas hermanas</b>, reduciendo el número a n=23. Antes de la meiosis II, la célula <b>vuelve a duplicar su ADN</b>. Al final se obtienen 4 células <b>idénticas</b> entre sí."</p>
+      <button class="btn-sol">Ver los 4 errores</button>
+      <div class="solucion">
+        <ul>
+          <li><b>Error 1:</b> en profase I se aparean los <b>homólogos</b> (materno con paterno), no las cromátidas hermanas.</li>
+          <li><b>Error 2:</b> en anafase I se separan los <b>homólogos</b>, no las hermanas. Las hermanas siguen unidas por el centrómero hasta anafase II.</li>
+          <li><b>Error 3:</b> antes de la meiosis II <b>NO se duplica el ADN</b>. Se replica una sola vez (antes de meiosis I).</li>
+          <li><b>Error 4:</b> las 4 células son <b>distintas</b> entre sí (por entrecruzamiento + segregación independiente), no idénticas.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EJ 8: caso clínico -->
+  <section class="hoja">
+    <div class="ejercicio">
+      <div class="ej-cab"><span class="ej-num">8</span><b>Caso clínico: corazón chagásico</b><span class="ej-tags"><span class="ej-tag p">protozoos</span><span class="ej-tag m">ciclo/mitosis</span></span></div>
+      <p class="enun">En un Chagas crónico, <i class="sp">T. cruzi</i> invade células del corazón. El amastigota se multiplica adentro y las destruye.<br>
+      (a) ¿Por qué proceso se multiplica el amastigota dentro de la célula?<br>
+      (b) ¿Ese proceso genera variabilidad genética?<br>
+      (c) Las células musculares cardíacas están en <b>G0</b>. ¿Qué consecuencia tiene eso para el daño?</p>
+      <button class="btn-sol">Ver resolución</button>
+      <div class="solucion">
+        <b>(a)</b> Por <b>fisión binaria</b> (mitótica): el amastigota se divide muchas veces dando copias <b>idénticas</b> que llenan la célula.<br>
+        <b>(b)</b> <b>No.</b> Al ser una división tipo mitosis, todas las copias son clones. La variabilidad vendría de la meiosis (que acá no ocurre) o de mutaciones/variación antigénica.<br>
+        <b>(c)</b> Las células en <b>G0 no se dividen</b>: el corazón <b>no puede reemplazar</b> las fibras destruidas. El daño se acumula y es irreversible → <b>cardiomegalia</b> e insuficiencia. Por eso el Chagas crónico pega tan fuerte en el corazón.
+      </div>
+    </div>
+  </section>
+
+  <!-- EJ 9: V/F justificando -->
+  <section class="hoja">
+    <div class="ejercicio">
+      <div class="ej-cab"><span class="ej-num">9</span><b>Verdadero o falso (y por qué)</b><span class="ej-tags"><span class="ej-tag p">protozoos</span><span class="ej-tag m">ciclo/mitosis</span><span class="ej-tag me">meiosis</span></span></div>
+      <p class="enun">Elegí y fijate la justificación:</p>
+
+      <p class="q" style="font-weight:800;margin-bottom:4px">a) <i class="sp">Giardia</i> obtiene la mayor parte de su ATP de sus mitosomas.</p>
+      <button class="opcion" data-q="va" data-ok="">Verdadero</button>
+      <button class="opcion" data-q="va" data-ok="0">Falso</button>
+      <div class="feedback" id="fva"></div>
+
+      <p class="q" style="font-weight:800;margin:14px 0 4px">b) En la anafase de la mitosis y en la anafase II de la meiosis se separa lo mismo.</p>
+      <button class="opcion" data-q="vb" data-ok="0">Verdadero</button>
+      <button class="opcion" data-q="vb" data-ok="">Falso</button>
+      <div class="feedback" id="fvb"></div>
+
+      <p class="q" style="font-weight:800;margin:14px 0 4px">c) El entrecruzamiento (crossing over) ocurre en la mitosis para generar variabilidad.</p>
+      <button class="opcion" data-q="vc" data-ok="">Verdadero</button>
+      <button class="opcion" data-q="vc" data-ok="0">Falso</button>
+      <div class="feedback" id="fvc"></div>
+
+      <p class="q" style="font-weight:800;margin:14px 0 4px">d) La vinchuca transmite el Chagas al inyectar <i class="sp">T. cruzi</i> con su saliva al picar.</p>
+      <button class="opcion" data-q="vd" data-ok="">Verdadero</button>
+      <button class="opcion" data-q="vd" data-ok="0">Falso</button>
+      <div class="feedback" id="fvd"></div>
+
+      <p class="q" style="font-weight:800;margin:14px 0 4px">e) Una neurona (en G0) puede sufrir apoptosis, pero normalmente no hace mitosis.</p>
+      <button class="opcion" data-q="ve" data-ok="0">Verdadero</button>
+      <button class="opcion" data-q="ve" data-ok="">Falso</button>
+      <div class="feedback" id="fve"></div>
+    </div>
+
+    <p class="cierre">Si llegaste hasta acá y la mayoría te salió: estás listo/a. 💪</p>
+    <p class="cierre chico">Volvé al <a class="link" href="index.html">índice</a> o repasá el tema que se te complicó.</p>
+  </section>
+
+</div>
+<script src="comun.js"></script>
+<script>
+window.EXPLICA = {
+  "va":"Falso. El mitosoma es una mitocondria reducida que NO produce ATP ni tiene genoma. Giardia obtiene energía por otras vías (fermentación en el citoplasma).",
+  "vb":"Verdadero. En ambas se separan las cromátidas hermanas. Lo que es único de la meiosis es la anafase I, donde se separan los homólogos.",
+  "vc":"Falso. La mitosis no hace crossing over (da clones). El entrecruzamiento es exclusivo de la meiosis, en el paquiteno de la profase I.",
+  "vd":"Falso. El contagio es por las HECES de la vinchuca (contaminación al rascarse), no por la saliva de la picadura.",
+  "ve":"Verdadero. Las neuronas están en G0: no se dividen (no hacen mitosis), pero sí pueden morir por apoptosis."
+};
+
+/* Reveal de soluciones */
+document.querySelectorAll(".btn-sol").forEach(function(b){
+  b.dataset.orig=b.textContent;
+  b.addEventListener("click",function(){
+    var abierta=b.nextElementSibling.classList.toggle("abierta");
+    b.textContent = abierta ? "Ocultar" : b.dataset.orig;
+  });
+});
+
+/* Tablas para completar */
+document.querySelectorAll(".btn-check").forEach(function(b){
+  b.addEventListener("click",function(){
+    var tabla=document.getElementById(b.dataset.tabla);
+    var ok=0,tot=0;
+    tabla.querySelectorAll("input[data-ok]").forEach(function(inp){
+      tot++;
+      var val=inp.value.trim().toLowerCase().replace(/c/g,"").replace(/\s/g,"");
+      var good=inp.dataset.ok.toLowerCase().replace(/c/g,"");
+      var bien=(val!=="" && val===good);
+      inp.classList.toggle("ok",bien); inp.classList.toggle("mal",!bien);
+      if(bien) ok++;
+    });
+    var msg=document.getElementById(b.dataset.msg);
+    msg.textContent = ok+" / "+tot+" correctas"+(ok===tot?" — ¡impecable!":" — revisá las rojas.");
+    msg.style.color = (ok===tot)?VERDE:ROJO;
+  });
+});
+
+/* Ordenar */
+document.querySelectorAll(".ordenar").forEach(function(o){
+  var seq=o.querySelector(".secuencia");
+  function renumerar(){ Array.prototype.forEach.call(seq.children,function(c,i){ c.dataset.i=i+1; }); }
+  o.querySelectorAll(".chip").forEach(function(ch){
+    ch.addEventListener("click",function(){
+      ch.disabled=true;
+      var it=document.createElement("button");
+      it.className="seq-item"; it.textContent=ch.textContent; it.dataset.v=ch.dataset.v;
+      it.addEventListener("click",function(){ it.remove(); ch.disabled=false; renumerar(); });
+      seq.appendChild(it); renumerar();
+    });
+  });
+  o.querySelector(".btn-orden").addEventListener("click",function(){
+    var got=Array.prototype.map.call(seq.querySelectorAll(".seq-item"),function(x){return x.dataset.v;}).join(",");
+    var msg=o.querySelector(".orden-res");
+    var bien=(got===o.dataset.correcto);
+    msg.textContent = bien ? "✓ ¡Orden correcto! Leo Como Papas Di Domingo." : "✗ Todavía no. Reordená (clickeá un ítem para sacarlo) y reintentá.";
+    msg.style.color = bien?VERDE:ROJO;
+  });
+});
+</script>
+</body>
+</html>

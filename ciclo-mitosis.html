@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>02 · Núcleo, ciclo celular y mitosis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<nav class="navbar">
+  <a class="inicio" href="index.html">← Carpeta</a>
+  <a href="protozoos.html">Protozoos</a>
+  <a class="actual" href="ciclo-mitosis.html">Ciclo · Mitosis</a>
+  <a href="meiosis.html">Meiosis</a>
+  <a href="ejercicios.html">Ejercicios</a>
+</nav>
+<div class="carpeta">
+
+  <header class="caratula">
+    <div class="materia">Cuaderno 02 · Biología celular · Tema VIII</div>
+    <h1>Del ADN al cromosoma, y cómo se reparte</h1>
+    <p class="sub">El núcleo por dentro, cómo se empaqueta el ADN, el reloj del ciclo celular con sus controles, y la mitosis fase por fase con el huso y las cohesinas.</p>
+  </header>
+
+  <!-- GLOSARIO -->
+  <section class="hoja" id="glosario">
+    <span class="num">Hoja 0</span>
+    <h2>Glosario: la jerga sin vueltas</h2>
+    <div class="glosario-grid">
+      <div class="termino"><span class="simbolo">⭕</span><span class="def"><b>Envoltura nuclear</b> — doble membrana con <b>poros</b> que controlan qué entra y sale del núcleo. La externa se continúa con el RE rugoso.</span></div>
+      <div class="termino"><span class="simbolo">🕸️</span><span class="def"><b>Lámina nuclear</b> — malla de filamentos intermedios (laminas) que sostiene el núcleo y ancla la cromatina. Se desarma en la mitosis.</span></div>
+      <div class="termino"><span class="simbolo">⚙️</span><span class="def"><b>Nucleolo</b> — fábrica de ARN ribosómico y subunidades de ribosomas. Se arma sobre las regiones <b>NOR</b>. No tiene membrana.</span></div>
+      <div class="termino"><span class="simbolo">🧵</span><span class="def"><b>Cromatina</b> — ADN + histonas en su forma descondensada (fina y larga). Es como está el material genético en la interfase.</span></div>
+      <div class="termino"><span class="simbolo">🔴</span><span class="def"><b>Nucleosoma</b> — unidad básica: 8 histonas (2× H2A, H2B, H3, H4) con el ADN enrollado + H1. Diámetro 11 nm.</span></div>
+      <div class="termino"><span class="simbolo">🧬</span><span class="def"><b>Cromosoma</b> — cromatina en su <b>máxima condensación</b>, visible en la división. Tras la fase S tiene 2 <b>cromátidas hermanas</b>.</span></div>
+      <div class="termino"><span class="simbolo">•</span><span class="def"><b>Centrómero</b> — constricción primaria que une las cromátidas hermanas y separa los brazos <b>p</b> (corto) y <b>q</b> (largo).</span></div>
+      <div class="termino"><span class="simbolo">🎯</span><span class="def"><b>Cinetocoro</b> — estructura proteica sobre el centrómero donde se enganchan los microtúbulos del huso. Sin él no hay reparto.</span></div>
+      <div class="termino"><span class="simbolo">🔗</span><span class="def"><b>Cohesinas</b> — anillos de proteína que mantienen unidas a las cromátidas hermanas desde la fase S hasta la anafase.</span></div>
+      <div class="termino"><span class="simbolo">📦</span><span class="def"><b>Condensinas</b> — proteínas que compactan el ADN en cromosomas más cortos y resistentes para poder repartirlos.</span></div>
+      <div class="termino"><span class="simbolo">🪢</span><span class="def"><b>Huso mitótico</b> — andamio de microtúbulos entre los dos polos. Fibras <b>cinetocóricas</b> (tiran cromosomas) y <b>polares</b> (se solapan).</span></div>
+      <div class="termino"><span class="simbolo">⏱️</span><span class="def"><b>Punto de control</b> (checkpoint) — freno molecular que impide pasar de fase si algo no está listo. Regulados por <b>CDK + ciclinas</b>.</span></div>
+      <div class="termino"><span class="simbolo">✂️</span><span class="def"><b>Citocinesis</b> — división del citoplasma. Animal: anillo de actina/miosina. Vegetal: fragmoplasto y placa celular.</span></div>
+      <div class="termino"><span class="simbolo">🧫</span><span class="def"><b>Somática vs germinal</b> — la somática hace mitosis (2n→2n). Solo la germinal puede hacer meiosis para dar gametos.</span></div>
+    </div>
+  </section>
+
+  <!-- NÚCLEO -->
+  <section class="hoja" id="nucleo">
+    <span class="num">Tema 1</span>
+    <h2>El núcleo: el centro de comando</h2>
+    <p>El núcleo guarda la información hereditaria y dirige todo desde ahí. No es una bolsa lisa; tiene partes que conviene tener claras:</p>
+    <ul>
+      <li><b>Envoltura nuclear:</b> <mark>doble membrana</mark> (dos bicapas) con un espacio perinuclear de 20–40 nm. La membrana externa tiene ribosomas y se continúa con el retículo endoplasmático rugoso.</li>
+      <li><b>Poros nucleares:</b> el <b>complejo del poro</b> son ~8 nucleoporinas en un octágono con tres anillos (citoplasmático, radial, nuclear). Deciden qué pasa: salen ARNm, entran factores de transcripción.</li>
+      <li><b>Lámina nuclear:</b> malla de <b>filamentos intermedios</b> (laminas) pegada a la cara interna. Da forma y ancla la cromatina. Al fosforilarse, la envoltura se desarma → arranca la mitosis.</li>
+      <li><b>Nucleolo:</b> sin membrana, es donde se transcribe y procesa el <b>ARN ribosómico</b> y se ensamblan las subunidades de los ribosomas, a partir de las regiones organizadoras (<b>NOR</b>).</li>
+    </ul>
+    <div class="caja evolutivo"><span class="cab">De dónde salió el núcleo</span>La <b>hipótesis del hidrógeno</b> (Martin y Müller, 1998) propone que el núcleo y las mitocondrias surgieron de una asociación entre una arquea y una bacteria. El eucariota es, en el fondo, una fusión.</div>
+  </section>
+
+  <!-- EMPAQUETAMIENTO -->
+  <section class="hoja" id="empaquetamiento">
+    <span class="num">Tema 2</span>
+    <h2>Del ADN al cromosoma: un problema de guardar</h2>
+    <p>Cada célula tiene ~2 metros de ADN que deben caber en un núcleo de micras. La solución es <mark>enrollar en niveles sucesivos</mark>, cada uno más compacto que el anterior. Movés el deslizador y vas haciendo zoom out desde la doble hélice hasta el cromosoma:</p>
+
+    <div class="experimento">
+      <div class="titulo">EXPERIMENTO 1 <span class="tag">empaquetamiento</span> Del ADN de 2 nm al cromosoma de 1400 nm</div>
+      <canvas id="cvpack" class="lienzo" width="680" height="300"></canvas>
+      <div class="panel">
+        <div class="grupo" style="flex:1">
+          <label for="pack">Nivel de condensación:</label>
+          <input type="range" id="pack" min="0" max="4" step="1" value="0">
+        </div>
+      </div>
+      <div class="veredicto" id="pack_v"></div>
+    </div>
+
+    <h3>Cómo es un cromosoma</h3>
+    <p>Después de la fase S, cada cromosoma tiene <b>dos cromátidas hermanas idénticas</b> (una molécula de ADN cada una) unidas por el centrómero. Partes que te van a pedir señalar:</p>
+    <ul>
+      <li><b>Centrómero:</b> constricción primaria; divide en brazo <b>p</b> (corto, <i>petit</i>) y brazo <b>q</b> (largo).</li>
+      <li><b>Cinetocoro:</b> placa proteica sobre el centrómero → ahí se anclan los microtúbulos.</li>
+      <li><b>Telómeros:</b> los extremos; protegen y dan estabilidad.</li>
+      <li><b>Satélite:</b> zona separada por una constricción secundaria (asociada a las NOR).</li>
+    </ul>
+    <div class="nota">→ Ojo con contar: dos cromátidas hermanas unidas por <b>un</b> centrómero son <b>un</b> cromosoma, no dos. Se cuenta por centrómeros.</div>
+  </section>
+
+  <!-- CICLO CELULAR -->
+  <section class="hoja" id="ciclo">
+    <span class="num">Tema 3</span>
+    <h2>El ciclo celular: el reloj con frenos</h2>
+    <p>Una célula que prolifera pasa por una <b>interfase</b> (larga: crece, copia el ADN, se prepara) y una <b>fase M</b> (corta: se divide). Tocá cada fase de la rueda:</p>
+
+    <div class="experimento">
+      <div class="titulo">EXPERIMENTO 2 <span class="tag">ciclo celular</span> La rueda G1 · S · G2 · M</div>
+      <canvas id="cvciclo" class="lienzo" width="680" height="340"></canvas>
+      <div class="panel">
+        <div class="grupo">
+          <button class="tab activo" data-fase="G1" id="cg1">G1</button>
+          <button class="tab" data-fase="S" id="cs">S</button>
+          <button class="tab" data-fase="G2" id="cg2">G2</button>
+          <button class="tab" data-fase="M" id="cm">M</button>
+          <button class="tab chico" data-fase="G0" id="cg0">G0</button>
+        </div>
+      </div>
+      <div class="veredicto" id="ciclo_v"></div>
+    </div>
+
+    <div class="caja examen"><span class="cab">Puntos de control</span>Hay frenos que impiden avanzar si algo está mal, gobernados por <b>quinasas dependientes de ciclina (CDK)</b> + ciclinas: el de <b>G1/S</b> (¿está sano el ADN y hay recursos?), el de <b>G2/M</b> (¿se copió bien todo el ADN?) y el <b>del huso</b> en M (¿están todos los cinetocoros enganchados?). Si un checkpoint falla y la célula avanza igual con ADN dañado, ese es el camino al <b>cáncer</b>.</div>
+    <div class="caja dato"><span class="cab">El tiempo no es fijo</span>Un huevo de rana completa el ciclo en 30 minutos; una célula intestinal en ~12 horas; una hepática humana puede tardar <b>un año</b>. Y muchas células (como las neuronas) entran en <b>G0</b> y no se dividen nunca más.</div>
+  </section>
+
+  <!-- MITOSIS -->
+  <section class="hoja" id="mitosis">
+    <span class="num">Tema 4</span>
+    <h2>Mitosis: una copia idéntica para cada hija</h2>
+    <p>La mitosis reparte una copia de cada cromosoma a dos núcleos idénticos. Son <b>5 fases</b> (ojo: incluye la <b>prometafase</b>, que a veces se saltea). Andá con <b>Siguiente ▶</b> y mirá el huso, los cinetocoros y las cohesinas:</p>
+
+    <div class="experimento">
+      <div class="titulo">EXPERIMENTO 3 <span class="tag">2n = 4</span> Mitosis paso a paso</div>
+      <canvas id="cvmit" class="lienzo" width="680" height="420"></canvas>
+      <div class="panel">
+        <div class="grupo">
+          <button class="tab" id="mprev">◀ Anterior</button>
+          <button class="tab go" id="mnext">Siguiente ▶</button>
+        </div>
+      </div>
+      <div class="marcadores">
+        <div class="marcador"><div class="k">Fase</div><div class="v" id="mfase" style="font-size:1rem">Profase</div></div>
+        <div class="marcador"><div class="k">Cromosomas</div><div class="v" id="mcrom">4</div></div>
+        <div class="marcador"><div class="k">Cromátidas</div><div class="v" id="mcrt">8</div></div>
+      </div>
+      <div class="veredicto" id="mit_v"></div>
+    </div>
+
+    <h3>El detalle que ordena todo: las cohesinas</h3>
+    <p>Las cohesinas se cargan sobre las cromátidas en G1/S (dependiente de ATP) y las mantienen pegadas. En la <b>anafase</b>, una enzima corta las cohesinas de golpe y las hermanas se separan: cada una, ya sola, pasa a ser un cromosoma con forma de "V" apuntando al polo. <mark>La separación es de cromátidas hermanas</mark> (idénticas), por eso las hijas son clones.</p>
+
+    <h3>Citocinesis: el corte final, distinto según el reino</h3>
+    <table class="chuleta">
+      <thead><tr><th></th><th>Célula animal</th><th>Célula vegetal</th></tr></thead>
+      <tbody>
+        <tr><td><b>Mecanismo</b></td><td>Anillo contráctil de <b>actina y miosina</b></td><td><b>Fragmoplasto</b>: vesículas del Golgi</td></tr>
+        <tr><td><b>Cómo divide</b></td><td>Estrangula desde afuera (surco de segmentación)</td><td>Construye una <b>placa celular</b> desde adentro hacia afuera</td></tr>
+        <tr><td><b>Por qué</b></td><td>No hay pared: puede apretarse</td><td>Hay pared rígida: hay que fabricar una nueva</td></tr>
+      </tbody>
+    </table>
+    <div class="nota">→ Las células vegetales tampoco tienen centríolos: forman el huso desde un MTOC (centro organizador de microtúbulos), sin áster.</div>
+  </section>
+
+  <!-- CHULETA + QUIZ -->
+  <section class="hoja" id="chuleta">
+    <span class="num">Cierre</span>
+    <h2>Chuleta + mini examen</h2>
+    <table class="chuleta">
+      <thead><tr><th>Si te preguntan…</th><th>La respuesta corta</th></tr></thead>
+      <tbody>
+        <tr><td>¿Cuál es la unidad de empaquetamiento?</td><td>El nucleosoma (octámero de histonas + H1), 11 nm</td></tr>
+        <tr><td>¿Dónde se anclan los microtúbulos?</td><td>En el cinetocoro, sobre el centrómero</td></tr>
+        <tr><td>¿Cuándo se copia el ADN?</td><td>En la fase S de la interfase</td></tr>
+        <tr><td>¿Qué separa la anafase de la mitosis?</td><td>Las cromátidas hermanas (idénticas)</td></tr>
+        <tr><td>¿Qué mantiene unidas a las hermanas?</td><td>Las cohesinas, hasta que se cortan en anafase</td></tr>
+        <tr><td>Citocinesis vegetal</td><td>Fragmoplasto → placa celular (no anillo contráctil)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Mini examen (sin nota, tranqui)</h3>
+
+    <div class="pregunta">
+      <p class="q">1. La fase donde se replica el ADN (y cada cromosoma queda con 2 cromátidas) es…</p>
+      <button class="opcion" data-q="1" data-ok="">G1</button>
+      <button class="opcion" data-q="1" data-ok="0">S (síntesis)</button>
+      <button class="opcion" data-q="1" data-ok="">M (mitosis)</button>
+      <div class="feedback" id="f1"></div>
+    </div>
+
+    <div class="pregunta">
+      <p class="q">2. El cinetocoro es…</p>
+      <button class="opcion" data-q="2" data-ok="0">Una placa proteica sobre el centrómero donde se unen los microtúbulos</button>
+      <button class="opcion" data-q="2" data-ok="">El extremo del cromosoma que lo protege</button>
+      <button class="opcion" data-q="2" data-ok="">El anillo que une las cromátidas hermanas</button>
+      <div class="feedback" id="f2"></div>
+    </div>
+
+    <div class="pregunta">
+      <p class="q">3. En la mitosis, la prometafase se caracteriza porque…</p>
+      <button class="opcion" data-q="3" data-ok="0">Se desarma la envoltura nuclear y los microtúbulos "buscan" y capturan los cinetocoros</button>
+      <button class="opcion" data-q="3" data-ok="">Los cromosomas ya están alineados en el ecuador</button>
+      <button class="opcion" data-q="3" data-ok="">Las cromátidas hermanas ya se separaron</button>
+      <div class="feedback" id="f3"></div>
+    </div>
+
+    <div class="pregunta">
+      <p class="q">4. Una célula vegetal hace la citocinesis mediante…</p>
+      <button class="opcion" data-q="4" data-ok="">Un anillo contráctil de actina y miosina</button>
+      <button class="opcion" data-q="4" data-ok="0">Un fragmoplasto que construye la placa celular</button>
+      <button class="opcion" data-q="4" data-ok="">Seudópodos que la parten al medio</button>
+      <div class="feedback" id="f4"></div>
+    </div>
+
+    <div class="pregunta">
+      <p class="q">5. Un punto de control (checkpoint) falla y la célula avanza con el ADN dañado. El riesgo es…</p>
+      <button class="opcion" data-q="5" data-ok="">Que la célula entre en G0 para siempre</button>
+      <button class="opcion" data-q="5" data-ok="0">Que se acumulen errores y avance hacia el cáncer</button>
+      <button class="opcion" data-q="5" data-ok="">Que se convierta en una célula vegetal</button>
+      <div class="feedback" id="f5"></div>
+    </div>
+
+    <p class="cierre">Fin del cuaderno 02. Seguí con <a class="link" href="meiosis.html">Meiosis →</a></p>
+  </section>
+
+</div>
+<script src="comun.js"></script>
+<script>
+window.EXPLICA = {
+  "1":"El ADN se replica en la fase S. Antes (G1) el cromosoma tiene 1 cromátida; después (G2, M) tiene 2 hermanas unidas por cohesinas.",
+  "2":"El cinetocoro es la placa proteica sobre el centrómero: el punto de anclaje de los microtúbulos del huso. Sin cinetocoro no hay reparto.",
+  "3":"En prometafase la envoltura ya se fragmentó y los microtúbulos, con movimientos dinámicos, capturan los cinetocoros y arrastran los cromosomas al centro.",
+  "4":"Como tiene pared rígida, la vegetal construye una placa celular desde adentro con vesículas del Golgi (fragmoplasto). El anillo de actina/miosina es de la animal.",
+  "5":"Los checkpoints frenan a la célula con ADN dañado. Si se saltan, se acumulan mutaciones: es el camino hacia la transformación cancerosa."
+};
+
+/* ============ EXP 1: empaquetamiento ============ */
+(function(){
+  const cv=$("cvpack"); if(!cv) return;
+  const {ctx,W,H}=setupCanvas(cv);
+  const cy=H/2;
+  const info=[
+    ["Doble hélice de ADN — 2 nm","La escalera retorcida: dos cadenas de nucleótidos. Es el nivel base, sin enrollar."],
+    ["Nucleosomas (collar de perlas) — 11 nm","El ADN se enrolla sobre un octámero de histonas (2× H2A, H2B, H3, H4). La H1 sella la vuelta."],
+    ["Fibra de 30 nm (solenoide)","Los nucleosomas se apilan en zig-zag gracias a la H1. Es la cromatina del núcleo en interfase."],
+    ["Bucles de 300 nm","La fibra de 30 nm forma lazos anclados a un armazón proteico. Gran salto de compactación."],
+    ["Cromosoma metafásico — 1400 nm","Máxima condensación (condensinas). Dos cromátidas hermanas visibles al microscopio."]
+  ];
+  function helice(){
+    ctx.lineWidth=3;
+    for(let s=0;s<2;s++){
+      ctx.strokeStyle=s?COL.azul:COL.naranja; ctx.beginPath();
+      for(let i=0;i<=W;i+=4){ const y=cy+Math.sin(i*0.05+s*Math.PI)*34; i?ctx.lineTo(i,y):ctx.moveTo(i,y); }
+      ctx.stroke();
+    }
+    ctx.strokeStyle="rgba(28,93,76,.5)"; ctx.lineWidth=2;
+    for(let i=0;i<=W;i+=18){ ctx.beginPath(); ctx.moveTo(i,cy+Math.sin(i*0.05)*34); ctx.lineTo(i,cy+Math.sin(i*0.05+Math.PI)*34); ctx.stroke(); }
+  }
+  function perlas(){
+    ctx.strokeStyle="rgba(28,93,76,.5)"; ctx.lineWidth=2; ctx.beginPath();
+    for(let i=0;i<=W;i+=4){ const y=cy+Math.sin(i*0.08)*16; i?ctx.lineTo(i,y):ctx.moveTo(i,y);} ctx.stroke();
+    for(let i=40;i<W;i+=64){ const y=cy+Math.sin(i*0.08)*16;
+      ctx.fillStyle=COL.violeta; ctx.strokeStyle=COL.tinta; ctx.lineWidth=2;
+      ctx.beginPath(); ctx.arc(i,y,15,0,7); ctx.fill(); ctx.stroke(); }
+    etiqueta(ctx,"histonas",44,cy-34,COL.violeta,13);
+  }
+  function solenoide(){
+    ctx.fillStyle=COL.violeta; ctx.strokeStyle=COL.tinta; ctx.lineWidth=1.5;
+    for(let i=30;i<W-20;i+=22){ const y=cy+Math.sin(i*0.12)*40;
+      ctx.beginPath(); ctx.arc(i,y,12,0,7); ctx.fill(); ctx.stroke(); }
+    etiqueta(ctx,"fibra 30 nm en zig-zag",40,cy-52,COL.tinta,13);
+  }
+  function bucles(){
+    ctx.strokeStyle=COL.tinta; ctx.lineWidth=4; ctx.beginPath(); ctx.moveTo(60,cy); ctx.lineTo(W-60,cy); ctx.stroke();
+    etiqueta(ctx,"armazón proteico",W/2-60,cy+64,"rgba(28,93,76,.6)",12);
+    ctx.strokeStyle=COL.violeta; ctx.lineWidth=6; ctx.lineCap="round";
+    for(let i=90;i<W-70;i+=54){
+      const up=(i/54)%2<1?-1:1;
+      ctx.beginPath(); ctx.moveTo(i,cy); ctx.bezierCurveTo(i-16,cy+up*90,i+40,cy+up*90,i+24,cy); ctx.stroke();
+    }
+    ctx.lineCap="butt";
+  }
+  function cromosoma(){
+    const cx=W/2;
+    ctx.strokeStyle=COL.violeta; ctx.lineWidth=22; ctx.lineCap="round";
+    [-12,12].forEach(function(dx){
+      ctx.beginPath(); ctx.moveTo(cx+dx-14,cy-80); ctx.lineTo(cx+dx+6,cy-8);
+      ctx.lineTo(cx+dx-14,cy+80); ctx.stroke(); // ligera V
+    });
+    ctx.fillStyle="#2b2b2b"; ctx.beginPath(); ctx.arc(cx,cy,7,0,7); ctx.fill();
+    ctx.lineCap="butt";
+    etiqueta(ctx,"centrómero",cx+22,cy+5,COL.tinta,13);
+    etiqueta(ctx,"2 cromátidas hermanas",cx-70,cy-96,COL.violeta,13);
+  }
+  function dibujar(){
+    ctx.clearRect(0,0,W,H);
+    const n=+$("pack").value;
+    [helice,perlas,solenoide,bucles,cromosoma][n]();
+    $("pack_v").innerHTML="<b>"+info[n][0]+".</b> "+info[n][1];
+  }
+  $("pack").addEventListener("input",dibujar);
+  dibujar();
+})();
+
+/* ============ EXP 2: rueda del ciclo celular ============ */
+(function(){
+  const cv=$("cvciclo"); if(!cv) return;
+  const {ctx,W,H}=setupCanvas(cv);
+  const cx=W/2, cy=H/2, R=118, r=64;
+  // fase: [inicio, fin] en fracción de vuelta, empezando arriba y en sentido horario
+  const segs={
+    G1:{a:0.00,b:0.42,col:"#6FA8DC",txt:"<b>G1 — crecimiento.</b> La fase más larga y variable. La célula crece, duplica organelas y sintetiza proteínas. Acá está el checkpoint G1/S: si el ADN está dañado o faltan recursos, no avanza (o se va a G0)."},
+    S:{a:0.42,b:0.62,col:"#F4A100",txt:"<b>S — síntesis.</b> Se replica todo el ADN: cada cromosoma pasa a tener 2 cromátidas hermanas unidas por cohesinas. También se duplica el centrosoma."},
+    G2:{a:0.62,b:0.80,col:"#6FA8DC",txt:"<b>G2 — preparación.</b> La célula ensambla lo necesario para dividirse. Checkpoint G2/M: verifica que el ADN se copió completo y sin errores antes de entrar en mitosis."},
+    M:{a:0.80,b:1.00,col:"#E4572E",txt:"<b>M — mitosis + citocinesis.</b> La fase corta: se divide el núcleo y luego el citoplasma. Tiene el checkpoint del huso: no separa cromátidas hasta que todos los cinetocoros estén enganchados."}
+  };
+  let sel="G1";
+  function arco(a,b,rad,col,ancho){
+    ctx.strokeStyle=col; ctx.lineWidth=ancho;
+    ctx.beginPath(); ctx.arc(cx,cy,rad,a*7-Math.PI/2,b*7-Math.PI/2); ctx.stroke();
+  }
+  function dibujar(){
+    ctx.clearRect(0,0,W,H);
+    Object.keys(segs).forEach(function(k){
+      const s=segs[k]; const activo=(k===sel);
+      arco(s.a,s.b,R,activo?s.col:s.col+"", activo?40:30);
+      if(!activo){ // atenuar
+        ctx.globalAlpha=.45; arco(s.a,s.b,R,"#fff",6); ctx.globalAlpha=1; }
+      // etiqueta
+      const mid=(s.a+s.b)/2; const ang=mid*7-Math.PI/2;
+      etiqueta(ctx,k,cx+Math.cos(ang)*R-6,cy+Math.sin(ang)*R+5,"#fff",16);
+    });
+    // checkpoints (puntos rojos en los límites clave)
+    [{p:0.42,l:"G1/S"},{p:0.80,l:"G2/M"}].forEach(function(c){
+      const ang=c.p*7-Math.PI/2, x=cx+Math.cos(ang)*R, y=cy+Math.sin(ang)*R;
+      ctx.fillStyle="#fff"; ctx.strokeStyle=COL.rojo; ctx.lineWidth=3;
+      ctx.beginPath(); ctx.arc(x,y,8,0,7); ctx.fill(); ctx.stroke();
+      ctx.fillStyle=COL.rojo; ctx.beginPath(); ctx.arc(x,y,3,0,7); ctx.fill();
+    });
+    // centro
+    ctx.fillStyle="#fff"; ctx.strokeStyle=COL.tinta; ctx.lineWidth=2;
+    ctx.beginPath(); ctx.arc(cx,cy,r-6,0,7); ctx.fill(); ctx.stroke();
+    ctx.textAlign="center";
+    etiqueta(ctx,"Interfase",cx-38,cy-6,COL.tinta,15);
+    etiqueta(ctx,"= G1+S+G2",cx-40,cy+14,"rgba(28,93,76,.6)",12);
+    ctx.textAlign="left";
+    // G0 rama
+    ctx.strokeStyle="rgba(28,93,76,.5)"; ctx.lineWidth=2; ctx.setLineDash([5,4]);
+    ctx.beginPath(); ctx.moveTo(cx-R-6,cy-40); ctx.lineTo(cx-R-70,cy-40); ctx.stroke(); ctx.setLineDash([]);
+    ctx.fillStyle=(sel==="G0")?COL.verde:"#B9D9C7"; ctx.strokeStyle=COL.tinta;
+    ctx.beginPath(); ctx.arc(cx-R-90,cy-40,22,0,7); ctx.fill(); ctx.stroke();
+    etiqueta(ctx,"G0",cx-R-100,cy-34,"#fff",15);
+  }
+  function set(k){
+    sel=k;
+    document.querySelectorAll("#ciclo [data-fase]").forEach(function(b){ b.classList.toggle("activo",b.dataset.fase===k); });
+    $("ciclo_v").innerHTML = (k==="G0")
+      ? "<b>G0 — reposo.</b> Muchas células salen del ciclo y no se dividen: neuronas, células musculares. Algunas pueden volver a entrar si hace falta (ej. hepatocitos tras una lesión)."
+      : segs[k].txt;
+    dibujar();
+  }
+  ["G1","S","G2","M","G0"].forEach(function(k){ $("c"+k.toLowerCase()).addEventListener("click",function(){ set(k); }); });
+  set("G1");
+})();
+
+/* ============ EXP 3: mitosis 5 fases ============ */
+(function(){
+  const cv=$("cvmit"); if(!cv) return;
+  const {ctx,W,H}=setupCanvas(cv);
+  const MATL="#E4572E", PATL="#3A6EA5"; // colores de cromosomas (2 largos, 2 cortos)
+
+  function membrana(cx,cy,rx,ry,punteada){
+    ctx.fillStyle="rgba(150,200,175,.14)"; ctx.strokeStyle="rgba(28,93,76,.55)"; ctx.lineWidth=2.5;
+    if(punteada) ctx.setLineDash([6,5]);
+    ctx.beginPath(); ctx.ellipse(cx,cy,rx,ry,0,0,7); ctx.fill(); ctx.stroke();
+    ctx.setLineDash([]);
+  }
+  function centrosoma(x,y){
+    ctx.fillStyle=COL.rojo; ctx.beginPath(); ctx.arc(x,y,5,0,7); ctx.fill();
+    ctx.strokeStyle="rgba(217,51,28,.5)"; ctx.lineWidth=1.5;
+    for(let k=0;k<8;k++){ const a=k/8*7; ctx.beginPath(); ctx.moveTo(x,y); ctx.lineTo(x+Math.cos(a)*14,y+Math.sin(a)*14); ctx.stroke(); }
+  }
+  function husoA(cx){ // polos izquierda/derecha
+    return {L:{x:cx-250,y:210}, R:{x:cx+250,y:210}};
+  }
+  function capsula(cx,cy,largo,ang,color){
+    const gr=9, hx=Math.cos(ang)*(largo/2-gr/2), hy=Math.sin(ang)*(largo/2-gr/2);
+    ctx.strokeStyle=color; ctx.lineWidth=gr; ctx.lineCap="round";
+    ctx.beginPath(); ctx.moveTo(cx-hx,cy-hy); ctx.lineTo(cx+hx,cy+hy); ctx.stroke(); ctx.lineCap="butt";
+  }
+  function centromero(cx,cy){ ctx.fillStyle="#2b2b2b"; ctx.beginPath(); ctx.arc(cx,cy,3.5,0,7); ctx.fill(); }
+  // cromosoma duplicado con cohesinas visibles (opcional) y cinetocoros
+  function dup(cx,cy,largo,ang,color,coh,cine){
+    const off=6, px=Math.cos(ang+Math.PI/2), py=Math.sin(ang+Math.PI/2);
+    capsula(cx+px*off,cy+py*off,largo,ang,color);
+    capsula(cx-px*off,cy-py*off,largo,ang,color);
+    if(coh){ ctx.strokeStyle="#2b2b2b"; ctx.lineWidth=1.5; // anillos de cohesina a lo largo
+      for(let k=-1;k<=1;k++){ const dx=Math.cos(ang)*k*largo*0.28, dy=Math.sin(ang)*k*largo*0.28;
+        ctx.beginPath(); ctx.moveTo(cx+dx+px*off,cy+dy+py*off); ctx.lineTo(cx+dx-px*off,cy+dy-py*off); ctx.stroke(); } }
+    centromero(cx,cy);
+    if(cine){ ctx.fillStyle="#fff"; ctx.strokeStyle=COL.tinta; ctx.lineWidth=1.5;
+      ctx.beginPath(); ctx.arc(cx,cy,5,0,7); ctx.fill(); ctx.stroke(); }
+  }
+  function single(cx,cy,largo,ang,color){ capsula(cx,cy,largo,ang,color); centromero(cx,cy); }
+  function fibras(polo,puntos){ ctx.strokeStyle="rgba(28,93,76,.35)"; ctx.lineWidth=1.5;
+    puntos.forEach(function(p){ ctx.beginPath(); ctx.moveTo(polo.x,polo.y); ctx.lineTo(p.x,p.y); ctx.stroke(); }); }
+
+  const fases=[
+    {n:"Profase", crom:"4", crt:"8",
+     cap:"<b>Profase.</b> La cromatina se condensa en cromosomas (2 cromátidas c/u, unidas por cohesinas). Fuera del núcleo se arma el huso entre los dos centrosomas. El nucleolo y la envoltura empiezan a desarmarse.",
+     draw:function(){
+       membrana(340,210,150,150,true);
+       centrosoma(120,120); centrosoma(560,120);
+       dup(280,150,66,0.4,MATL,true); dup(410,160,66,-0.5,PATL,true);
+       dup(285,285,44,-0.3,MATL,true); dup(410,275,44,0.5,PATL,true);
+       etiqueta(ctx,"cohesinas unen las hermanas",250,340,"rgba(28,93,76,.6)",12);
+     }},
+    {n:"Prometafase", crom:"4", crt:"8",
+     cap:"<b>Prometafase.</b> La envoltura nuclear ya se fragmentó. Los microtúbulos crecen con movimientos aleatorios, como si «buscaran», y capturan los <b>cinetocoros</b> (círculos blancos). Los cromosomas empiezan a deslizarse hacia el centro.",
+     draw:function(){
+       const p=husoA(340);
+       centrosoma(p.L.x,p.L.y); centrosoma(p.R.x,p.R.y);
+       const cr=[{x:250,y:150},{x:430,y:140},{x:300,y:290},{x:440,y:280}];
+       fibras(p.L,cr); fibras(p.R,cr);
+       dup(250,150,66,0.3,MATL,false,true); dup(430,140,66,-0.4,PATL,false,true);
+       dup(300,290,44,-0.2,MATL,false,true); dup(440,280,44,0.4,PATL,false,true);
+       etiqueta(ctx,"cinetocoro",470,300,COL.tinta,12);
+     }},
+    {n:"Metafase", crom:"4", crt:"8",
+     cap:"<b>Metafase.</b> Todos los cromosomas alineados en la <b>placa metafásica</b> (ecuador). Cada cromátida hermana mira a un polo opuesto: una enganchada a la izquierda, la otra a la derecha.",
+     draw:function(){
+       const p=husoA(340);
+       centrosoma(p.L.x,p.L.y); centrosoma(p.R.x,p.R.y);
+       ctx.strokeStyle="rgba(28,93,76,.4)"; ctx.lineWidth=1.5; ctx.setLineDash([5,5]);
+       ctx.beginPath(); ctx.moveTo(340,80); ctx.lineTo(340,360); ctx.stroke(); ctx.setLineDash([]);
+       const ys=[120,190,255,320], cols=[MATL,PATL,PATL,MATL], lar=[66,44,66,44];
+       ys.forEach(function(y,i){ fibras(p.L,[{x:326,y:y}]); fibras(p.R,[{x:354,y:y}]); dup(340,y,lar[i],0,cols[i],false,true); });
+       etiqueta(ctx,"placa metafásica",250,72,"rgba(28,93,76,.6)",12);
+     }},
+    {n:"Anafase", crom:"8", crt:"8",
+     cap:"<b>Anafase.</b> Se cortan las cohesinas: las <b>cromátidas hermanas se separan</b> y cada una viaja a un polo. Ya solas, cada cromátida es un cromosoma con forma de «V». Cada polo recibe un juego completo e idéntico.",
+     draw:function(){
+       const p=husoA(340);
+       centrosoma(p.L.x,p.L.y); centrosoma(p.R.x,p.R.y);
+       const ys=[120,190,255,320], cols=[MATL,PATL,PATL,MATL], lar=[66,44,66,44];
+       ys.forEach(function(y,i){
+         fibras(p.L,[{x:195,y:y}]); fibras(p.R,[{x:485,y:y}]);
+         single(195,y,lar[i],0,cols[i]); single(485,y,lar[i],0,cols[i]);
+       });
+       flecha(ctx,255,210,205,210,"rgba(28,93,76,.5)",2.5);
+       flecha(ctx,425,210,475,210,"rgba(28,93,76,.5)",2.5);
+     }},
+    {n:"Telofase + Citocinesis", crom:"4", crt:"4",
+     cap:"<b>Telofase + citocinesis.</b> Los cromosomas llegan a los polos y se descondensan; se rearma la envoltura nuclear y reaparecen los nucleolos. El citoplasma se parte (anillo contráctil en la célula animal). Resultado: <b>2 células idénticas, 2n=4</b>.",
+     draw:function(){
+       membrana(180,210,118,140,true); membrana(500,210,118,140,true);
+       const ys=[140,190,240,290], cols=[MATL,PATL,PATL,MATL], lar=[66,44,66,44];
+       ys.forEach(function(y,i){ single(180,y,lar[i],0,cols[i]); single(500,y,lar[i],0,cols[i]); });
+       // surco de segmentación
+       ctx.strokeStyle="rgba(28,93,76,.4)"; ctx.lineWidth=2;
+       ctx.beginPath(); ctx.moveTo(340,70); ctx.lineTo(340,350); ctx.stroke();
+     }}
+  ];
+  let i=0;
+  function render(){
+    ctx.clearRect(0,0,W,H);
+    const f=fases[i]; f.draw();
+    $("mfase").textContent=f.n; $("mcrom").textContent=f.crom; $("mcrt").textContent=f.crt;
+    $("mit_v").innerHTML=f.cap;
+    $("mprev").disabled=(i<=0); $("mnext").disabled=(i>=fases.length-1);
+    $("mprev").style.opacity=$("mprev").disabled?.4:1; $("mnext").style.opacity=$("mnext").disabled?.4:1;
+  }
+  $("mnext").addEventListener("click",function(){ if(i<fases.length-1){i++;render();} });
+  $("mprev").addEventListener("click",function(){ if(i>0){i--;render();} });
+  render();
+})();
+</script>
+</body>
+</html>

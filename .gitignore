@@ -1,0 +1,5 @@
+# macOS
+.DS_Store
+
+# PDFs de la cátedra: material de referencia, no se versionan
+*.pdf
