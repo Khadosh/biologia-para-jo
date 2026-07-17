@@ -324,9 +324,11 @@ window.EXPLICA = {
       // mitosomas (puntitos gris tenue)
       ctx.fillStyle="rgba(120,120,120,.6)";
       [[-8,-4],[8,-4]].forEach(function(p){ ctx.beginPath(); ctx.arc(p[0],p[1],4,0,7); ctx.fill(); });
-      // 8 flagelos (varios pares)
-      flagelo(-20,78,Math.PI/2+0.2,55,t*0.2,7); flagelo(20,78,Math.PI/2-0.2,55,t*0.2+1,7);
-      flagelo(-60,20,Math.PI-0.4,45,t*0.2+2,6); flagelo(60,20,0.4,45,t*0.2+3,6);
+      // 8 flagelos = 4 pares (anterolaterales, posterolaterales, ventrales, caudales)
+      flagelo(-44,-42,-2.3,44,t*0.2,6);           flagelo(44,-42,-0.84,44,t*0.2+1,6);   // anterolaterales
+      flagelo(-64,12,2.6,42,t*0.2+2,6);           flagelo(64,12,0.54,42,t*0.2+3,6);     // posterolaterales
+      flagelo(-18,66,2.2,46,t*0.2+4,7);           flagelo(18,66,0.94,46,t*0.2+5,7);     // ventrales
+      flagelo(-8,80,Math.PI/2+0.1,54,t*0.2+6,6);  flagelo(8,80,Math.PI/2-0.1,54,t*0.2+7,6); // caudales
       ctx.restore();
       etiqueta(ctx,"2 núcleos",cx-118,cy-24,COL.tinta,13);
       etiqueta(ctx,"disco adhesivo",cx+40,cy+22,COL.azul,13);
